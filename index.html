@@ -8,14 +8,20 @@
 
   <style>
     :root {
-      --navy: #0b1f2a;
-      --deep: #07151d;
-      --cream: #f7f3eb;
-      --white: #ffffff;
-      --gold: #c9a45c;
-      --gold-light: #e2c98e;
-      --muted: #65727a;
-      --border: #e8e1d5;
+      --navy: #071A2B;
+      --deep: #04121D;
+      --blue: #0B2638;
+      --blue-light: #12384F;
+
+      --cream: #F6F2E9;
+      --white: #FFFFFF;
+
+      --gold: #B8954A;
+      --gold-light: #D4B76A;
+      --gold-dark: #8F7135;
+
+      --muted: #65727A;
+      --border: #E4DED2;
     }
 
     * {
@@ -40,7 +46,9 @@
       text-decoration: none;
     }
 
-    /* NAVIGATION */
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     nav {
       position: fixed;
@@ -48,19 +56,25 @@
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(7, 21, 29, 0.95);
-      backdrop-filter: blur(10px);
+
+      background: rgba(4, 18, 29, 0.96);
+      backdrop-filter: blur(12px);
+
       padding: 18px 6%;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      border-bottom: 1px solid rgba(212, 183, 106, 0.12);
     }
 
     .logo {
       color: var(--white);
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       letter-spacing: 2px;
       font-weight: bold;
+      white-space: nowrap;
     }
 
     .logo span {
@@ -71,9 +85,15 @@
       display: flex;
       gap: 28px;
       list-style: none;
+
       color: white;
+
       font-family: Arial, sans-serif;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
+    }
+
+    .nav-links a {
+      transition: color 0.3s ease;
     }
 
     .nav-links a:hover {
@@ -83,24 +103,47 @@
     .nav-button {
       background: var(--gold);
       color: var(--deep);
+
       padding: 10px 18px;
+
       border-radius: 3px;
+
       font-family: Arial, sans-serif;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: bold;
+
+      letter-spacing: 0.5px;
+
+      transition: all 0.3s ease;
     }
 
-    /* HERO */
+    .nav-button:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       min-height: 100vh;
+
       padding: 160px 7% 100px;
+
       display: flex;
       align-items: center;
+
       background:
-        linear-gradient(rgba(7,21,29,.72), rgba(7,21,29,.8)),
+        linear-gradient(
+          90deg,
+          rgba(4, 18, 29, 0.94) 0%,
+          rgba(7, 26, 43, 0.84) 45%,
+          rgba(7, 26, 43, 0.55) 100%
+        ),
         url("https://images.unsplash.com/photo-1493552152660-f915ab47ae9d?auto=format&fit=crop&w=2000&q=85")
         center/cover;
+
       color: white;
     }
 
@@ -110,99 +153,152 @@
 
     .eyebrow {
       font-family: Arial, sans-serif;
+
       color: var(--gold-light);
+
       text-transform: uppercase;
       letter-spacing: 4px;
-      font-size: 0.75rem;
+
+      font-size: 0.72rem;
+
       margin-bottom: 20px;
     }
 
     h1 {
       font-size: clamp(3.2rem, 7vw, 6.5rem);
+
       line-height: 0.98;
+
       font-weight: normal;
+
       margin-bottom: 28px;
     }
 
     .hero p {
       max-width: 620px;
+
       font-size: 1.2rem;
-      color: #eee;
+
+      color: #eeeeee;
+
       margin-bottom: 35px;
     }
 
     .button {
       display: inline-block;
+
       padding: 15px 27px;
+
       background: var(--gold);
+
       color: var(--deep);
+
       font-family: Arial, sans-serif;
-      font-size: 0.8rem;
+
+      font-size: 0.78rem;
       font-weight: bold;
-      letter-spacing: 0.5px;
+
+      letter-spacing: 0.7px;
+
       border-radius: 3px;
-      transition: .3s;
+
+      transition: all 0.3s ease;
     }
 
     .button:hover {
       background: var(--gold-light);
+
+      color: var(--deep);
+
       transform: translateY(-2px);
     }
 
     .button-outline {
       background: transparent;
+
       color: white;
-      border: 1px solid rgba(255,255,255,.5);
+
+      border: 1px solid rgba(212, 183, 106, 0.65);
+
       margin-left: 10px;
     }
 
     .button-outline:hover {
-      background: white;
+      background: var(--gold);
+
+      border-color: var(--gold);
+
       color: var(--deep);
     }
 
-    /* TAGLINE */
+    /* =========================
+       TAGLINE
+    ========================= */
 
     .tagline {
-      background: var(--gold);
-      color: var(--deep);
+      background: var(--navy);
+
+      color: var(--gold-light);
+
       text-align: center;
+
       padding: 15px;
+
       font-family: Arial, sans-serif;
-      font-size: .78rem;
+
+      font-size: 0.72rem;
+
       letter-spacing: 1.5px;
+
       word-spacing: 8px;
+
+      border-top: 1px solid rgba(212, 183, 106, 0.25);
+      border-bottom: 1px solid rgba(212, 183, 106, 0.25);
     }
 
-    /* GENERAL */
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
 
     section {
       padding: 100px 7%;
     }
 
     .section-label {
-      color: var(--gold);
+      color: var(--gold-dark);
+
       font-family: Arial, sans-serif;
-      font-size: .72rem;
+
+      font-size: 0.7rem;
+
       letter-spacing: 3px;
+
       text-transform: uppercase;
+
       margin-bottom: 15px;
     }
 
     h2 {
       font-size: clamp(2.3rem, 4vw, 4rem);
+
       line-height: 1.1;
+
       font-weight: normal;
+
       margin-bottom: 25px;
     }
 
     .section-intro {
       max-width: 700px;
+
       color: var(--muted);
+
       font-size: 1.05rem;
     }
 
-    /* WHO WE ARE */
+    /* =========================
+       WHO WE ARE
+    ========================= */
 
     .who {
       background: var(--white);
@@ -210,15 +306,21 @@
 
     .who-grid {
       max-width: 1100px;
+
       margin: auto;
+
       display: grid;
-      grid-template-columns: .8fr 1.2fr;
+
+      grid-template-columns: 0.8fr 1.2fr;
+
       gap: 80px;
+
       align-items: center;
     }
 
     .who-copy {
       font-size: 1.05rem;
+
       color: #4d5a61;
     }
 
@@ -226,7 +328,9 @@
       margin-bottom: 18px;
     }
 
-    /* SERVICES */
+    /* =========================
+       SERVICES
+    ========================= */
 
     .services {
       background: var(--cream);
@@ -234,65 +338,145 @@
 
     .services-header {
       max-width: 800px;
+
       margin-bottom: 55px;
     }
 
     .service-grid {
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
+
       gap: 25px;
     }
 
     .service-card {
       background: white;
+
       padding: 40px 32px;
+
       border: 1px solid var(--border);
-      transition: .3s;
+
+      position: relative;
+
+      overflow: hidden;
+
+      transition: all 0.3s ease;
+
       display: flex;
+
       flex-direction: column;
+    }
+
+    .service-card::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 3px;
+
+      background: var(--gold);
+
+      transform: scaleX(0);
+
+      transform-origin: left;
+
+      transition: transform 0.3s ease;
     }
 
     .service-card:hover {
       transform: translateY(-7px);
-      box-shadow: 0 20px 45px rgba(7,21,29,.08);
+
+      box-shadow: 0 20px 45px rgba(7, 26, 43, 0.1);
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
     }
 
     .service-icon {
       font-size: 2rem;
+
       margin-bottom: 22px;
     }
 
     .service-card h3 {
       font-size: 1.65rem;
+
       font-weight: normal;
+
       margin-bottom: 18px;
     }
 
     .service-card p {
       color: var(--muted);
+
       margin-bottom: 30px;
+
       flex: 1;
     }
 
     .card-button {
       display: inline-block;
-      color: var(--gold);
+
+      color: var(--gold-dark);
+
       font-family: Arial, sans-serif;
+
       text-transform: uppercase;
+
       letter-spacing: 1px;
-      font-size: .7rem;
+
+      font-size: 0.68rem;
+
       font-weight: bold;
+
+      transition: color 0.3s ease;
     }
 
     .card-button:hover {
       color: var(--navy);
     }
 
-    /* HOW IT WORKS */
+    /* =========================
+       HOW IT WORKS
+    ========================= */
 
     .process {
-      background: var(--deep);
+      background:
+        linear-gradient(
+          135deg,
+          var(--deep),
+          var(--navy)
+        );
+
       color: white;
+
+      position: relative;
+    }
+
+    .process::after {
+      content: "";
+
+      position: absolute;
+
+      width: 350px;
+      height: 350px;
+
+      right: -120px;
+      top: -120px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(212, 183, 106, 0.1);
+    }
+
+    .process .section-label {
+      color: var(--gold-light);
     }
 
     .process .section-intro {
@@ -301,36 +485,49 @@
 
     .steps {
       display: grid;
+
       grid-template-columns: repeat(4, 1fr);
+
       gap: 30px;
+
       margin-top: 55px;
     }
 
     .step {
-      border-top: 1px solid rgba(255,255,255,.2);
+      border-top: 1px solid rgba(212, 183, 106, 0.35);
+
       padding-top: 25px;
     }
 
     .step-number {
       color: var(--gold-light);
+
       font-family: Arial, sans-serif;
-      font-size: .7rem;
+
+      font-size: 0.7rem;
+
       letter-spacing: 2px;
+
       margin-bottom: 20px;
     }
 
     .step h3 {
       font-size: 1.3rem;
+
       font-weight: normal;
+
       margin-bottom: 12px;
     }
 
     .step p {
       color: #adb9bf;
-      font-size: .95rem;
+
+      font-size: 0.95rem;
     }
 
-    /* WHY US */
+    /* =========================
+       WHY US
+    ========================= */
 
     .why {
       background: white;
@@ -338,19 +535,25 @@
 
     .why-grid {
       margin-top: 55px;
+
       display: grid;
+
       grid-template-columns: repeat(2, 1fr);
+
       gap: 50px 80px;
     }
 
     .why-item {
       border-left: 2px solid var(--gold);
+
       padding-left: 25px;
     }
 
     .why-item h3 {
       font-size: 1.3rem;
+
       font-weight: normal;
+
       margin-bottom: 10px;
     }
 
@@ -358,7 +561,9 @@
       color: var(--muted);
     }
 
-    /* ABOUT */
+    /* =========================
+       ABOUT
+    ========================= */
 
     .about {
       background: var(--cream);
@@ -366,91 +571,148 @@
 
     .about-inner {
       max-width: 950px;
+
       margin: auto;
+
       text-align: center;
     }
 
     .about-inner p {
       color: #536067;
+
       font-size: 1.08rem;
+
       margin-bottom: 20px;
     }
 
     .founders {
       margin-top: 35px;
+
       color: var(--navy) !important;
+
       font-style: italic;
     }
 
-    /* TESTIMONIAL */
+    /* =========================
+       TESTIMONIALS
+    ========================= */
 
     .testimonials {
       background: white;
+
       text-align: center;
     }
 
     .testimonial-box {
       max-width: 750px;
+
       margin: 45px auto 0;
+
       padding: 55px 40px;
+
       border: 1px solid var(--border);
+
+      position: relative;
+    }
+
+    .testimonial-box::before {
+      content: "“";
+
+      display: block;
+
+      font-size: 4rem;
+
+      line-height: 1;
+
+      color: var(--gold);
+
+      margin-bottom: 10px;
     }
 
     .testimonial-box p {
       font-size: 1.2rem;
+
       color: var(--muted);
+
       font-style: italic;
+
       margin-bottom: 30px;
     }
 
-    /* FINAL CTA */
+    /* =========================
+       FINAL CTA
+    ========================= */
 
     .final-cta {
       background:
-        linear-gradient(rgba(7,21,29,.9), rgba(7,21,29,.9)),
+        linear-gradient(
+          rgba(4, 18, 29, 0.93),
+          rgba(7, 26, 43, 0.93)
+        ),
         url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=85")
         center/cover;
+
       text-align: center;
+
       color: white;
+    }
+
+    .final-cta .section-label {
+      color: var(--gold-light);
     }
 
     .final-cta h2 {
       max-width: 700px;
+
       margin: 0 auto 25px;
     }
 
     .final-cta p {
       max-width: 650px;
+
       margin: 0 auto 35px;
+
       color: #d4dadd;
     }
 
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
-      background: #050f15;
+      background: #030D14;
+
       color: white;
+
       padding: 60px 7% 30px;
     }
 
     .footer-grid {
       display: grid;
+
       grid-template-columns: 1fr 1fr;
+
       gap: 50px;
+
       padding-bottom: 45px;
     }
 
     .footer-brand h3 {
       font-size: 1.5rem;
+
       font-weight: normal;
+
       margin-bottom: 8px;
     }
 
     .footer-brand p,
     .footer-contact p {
       color: #9da9ae;
+
       font-family: Arial, sans-serif;
-      font-size: .85rem;
+
+      font-size: 0.85rem;
+
       margin-bottom: 8px;
     }
 
@@ -458,20 +720,40 @@
       text-align: right;
     }
 
+    .footer-contact a {
+      color: var(--gold-light);
+
+      transition: color 0.3s ease;
+    }
+
+    .footer-contact a:hover {
+      color: white;
+    }
+
     .copyright {
-      border-top: 1px solid rgba(255,255,255,.1);
+      border-top: 1px solid rgba(255,255,255,0.1);
+
       padding-top: 25px;
+
       color: #7f8b91;
+
       font-family: Arial, sans-serif;
-      font-size: .75rem;
+
+      font-size: 0.72rem;
+
       display: flex;
+
       justify-content: space-between;
+
       gap: 20px;
     }
 
-    /* MOBILE */
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 850px) {
+
       .nav-links {
         display: none;
       }
@@ -490,6 +772,14 @@
 
       .hero {
         padding: 140px 6% 80px;
+
+        background:
+          linear-gradient(
+            rgba(4, 18, 29, 0.88),
+            rgba(7, 26, 43, 0.92)
+          ),
+          url("https://images.unsplash.com/photo-1493552152660-f915ab47ae9d?auto=format&fit=crop&w=1600&q=85")
+          center/cover;
       }
 
       .hero p {
@@ -538,18 +828,29 @@
     }
 
     @media (max-width: 500px) {
+
+      .logo {
+        font-size: 0.95rem;
+        letter-spacing: 1.5px;
+      }
+
       h1 {
         font-size: 3.1rem;
       }
 
       .tagline {
-        font-size: .65rem;
+        font-size: 0.62rem;
+
         line-height: 2;
+
+        word-spacing: 4px;
       }
 
       .button {
         width: 100%;
+
         text-align: center;
+
         margin: 5px 0;
       }
 
@@ -560,69 +861,129 @@
       .testimonial-box {
         padding: 35px 22px;
       }
+
+      .service-card {
+        padding: 32px 25px;
+      }
     }
   </style>
 </head>
 
+
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
 
   <nav>
-    <a href="#" class="logo">DARIEL <span>DESTINATIONS</span></a>
+
+    <a href="#" class="logo">
+      DARIEL <span>DESTINATIONS</span>
+    </a>
 
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#how-it-works">How It Works</a></li>
-      <li><a href="#why-us">Why Us</a></li>
+      <li>
+        <a href="#about">About</a>
+      </li>
+
+      <li>
+        <a href="#services">Services</a>
+      </li>
+
+      <li>
+        <a href="#how-it-works">How It Works</a>
+      </li>
+
+      <li>
+        <a href="#why-us">Why Us</a>
+      </li>
     </ul>
 
-    <a href="GOOGLE_FORM_LINK" class="nav-button">START PLANNING</a>
+    <a
+      href="https://forms.gle/SVi7MkJRvvi5hE9F9"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="nav-button"
+    >
+      START PLANNING
+    </a>
+
   </nav>
 
 
-  <!-- HERO -->
+  <!-- =========================
+       HERO
+  ========================= -->
 
   <header class="hero">
+
     <div class="hero-content">
 
-      <div class="eyebrow">Jamaica's Premium Travel Planning Company</div>
+      <div class="eyebrow">
+        Jamaica's Premium Travel Planning Company
+      </div>
 
-      <h1>The World Is Yours.<br>We'll Help You Get There.</h1>
+      <h1>
+        The World Is Yours.<br>
+        We'll Help You Get There.
+      </h1>
 
       <p>
         Premium travel planning for Jamaicans who know they belong everywhere.
       </p>
 
-      <a href="GOOGLE_FORM_LINK" class="button">
-        Start Planning Your Trip
+      <a
+        href="https://forms.gle/SVi7MkJRvvi5hE9F9"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="button"
+      >
+        START PLANNING YOUR TRIP
       </a>
 
     </div>
+
   </header>
 
 
-  <!-- TAGLINE -->
+  <!-- =========================
+       TAGLINE
+  ========================= -->
 
   <div class="tagline">
-    Visa Guidance · Custom Itineraries · Flights & Hotels · Honeymoon Planning
+
+    Visa Guidance
+    ·
+    Custom Itineraries
+    ·
+    Flights & Hotels
+    ·
+    Honeymoon Planning
+
   </div>
 
 
-  <!-- WHO WE ARE -->
+  <!-- =========================
+       WHO WE ARE
+  ========================= -->
 
   <section class="who" id="about">
 
     <div class="who-grid">
 
       <div>
-        <div class="section-label">Who We Are</div>
+
+        <div class="section-label">
+          Who We Are
+        </div>
 
         <h2>
           Travel Should Feel Like Freedom. Not Frustration.
         </h2>
+
       </div>
+
 
       <div class="who-copy">
 
@@ -657,15 +1018,21 @@
   </section>
 
 
-  <!-- SERVICES -->
+  <!-- =========================
+       SERVICES
+  ========================= -->
 
   <section class="services" id="services">
 
     <div class="services-header">
 
-      <div class="section-label">Our Services</div>
+      <div class="section-label">
+        Our Services
+      </div>
 
-      <h2>How We Help You Travel</h2>
+      <h2>
+        How We Help You Travel
+      </h2>
 
       <p class="section-intro">
         Three services. One goal. Getting you where you want to go —
@@ -674,30 +1041,47 @@
 
     </div>
 
+
     <div class="service-grid">
+
 
       <!-- SERVICE 1 -->
 
       <article class="service-card">
 
-        <div class="service-icon">✈️</div>
+        <div class="service-icon">
+          ✈️
+        </div>
 
-        <h3>The Clarity Session</h3>
+        <h3>
+          The Clarity Session
+        </h3>
 
         <p>
           Not sure where to start with your visa or travel documents?
+
           <br><br>
+
           In one focused WhatsApp consultation we walk you through exactly what
           you need, what to expect, and what your next steps should be —
           specific to your situation.
+
           <br><br>
+
           You leave with complete clarity and a written summary of everything
           we covered.
+
           <br><br>
+
           No more Googling at midnight. No more guessing.
         </p>
 
-        <a href="GOOGLE_FORM_LINK" class="card-button">
+        <a
+          href="https://forms.gle/SVi7MkJRvvi5hE9F9"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="card-button"
+        >
           Book Your Clarity Session →
         </a>
 
@@ -708,23 +1092,38 @@
 
       <article class="service-card">
 
-        <div class="service-icon">🌍</div>
+        <div class="service-icon">
+          🌍
+        </div>
 
-        <h3>The Signature Trip</h3>
+        <h3>
+          The Signature Trip
+        </h3>
 
         <p>
           You tell us where you want to go and your budget.
+
           <br><br>
+
           We handle the rest — flights, hotels, transfers, itinerary, and
           everything in between.
+
           <br><br>
+
           Every trip we plan is built specifically around you. Your travel
           style. Your priorities. Your timeline.
+
           <br><br>
+
           Not a package anyone else is selling. Your trip. Built for you.
         </p>
 
-        <a href="GOOGLE_FORM_LINK" class="card-button">
+        <a
+          href="https://forms.gle/SVi7MkJRvvi5hE9F9"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="card-button"
+        >
           Plan My Trip →
         </a>
 
@@ -735,150 +1134,242 @@
 
       <article class="service-card">
 
-        <div class="service-icon">💑</div>
+        <div class="service-icon">
+          💑
+        </div>
 
-        <h3>The Couples Escape</h3>
+        <h3>
+          The Couples Escape
+        </h3>
 
         <p>
           Your honeymoon or romantic getaway should be as extraordinary as the
           love it's celebrating.
+
           <br><br>
+
           The Couples Escape is our premium travel planning service designed
           specifically for Jamaican couples — from destination selection to the
           smallest detail that makes the trip unforgettable.
+
           <br><br>
+
           We don't just book travel. We build memories.
         </p>
 
-        <a href="GOOGLE_FORM_LINK" class="card-button">
+        <a
+          href="https://forms.gle/SVi7MkJRvvi5hE9F9"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="card-button"
+        >
           Plan Our Escape →
         </a>
 
       </article>
+
 
     </div>
 
   </section>
 
 
-  <!-- HOW IT WORKS -->
+  <!-- =========================
+       HOW IT WORKS
+  ========================= -->
 
   <section class="process" id="how-it-works">
 
-    <div class="section-label">The Process</div>
+    <div class="section-label">
+      The Process
+    </div>
 
-    <h2>Getting Started Is Simple</h2>
+    <h2>
+      Getting Started Is Simple
+    </h2>
 
     <p class="section-intro">
       A straightforward process designed to make your travel planning experience
       effortless.
     </p>
 
+
     <div class="steps">
 
+
       <div class="step">
-        <div class="step-number">01</div>
-        <h3>📋 Tell Us About Your Trip</h3>
+
+        <div class="step-number">
+          01
+        </div>
+
+        <h3>
+          📋 Tell Us About Your Trip
+        </h3>
+
         <p>
           Fill out our inquiry form or message us directly on WhatsApp.
           Tell us where you want to go, when, and what matters most to you.
         </p>
+
       </div>
 
+
       <div class="step">
-        <div class="step-number">02</div>
-        <h3>📞 We Connect</h3>
+
+        <div class="step-number">
+          02
+        </div>
+
+        <h3>
+          📞 We Connect
+        </h3>
+
         <p>
           We reach out within 4 hours to learn more about what you need
           and how we can help.
         </p>
+
       </div>
 
+
       <div class="step">
-        <div class="step-number">03</div>
-        <h3>✈️ We Build Your Trip</h3>
+
+        <div class="step-number">
+          03
+        </div>
+
+        <h3>
+          ✈️ We Build Your Trip
+        </h3>
+
         <p>
           We research, plan, and present your options — flights, hotels,
           itinerary, and everything in between.
         </p>
+
       </div>
 
+
       <div class="step">
-        <div class="step-number">04</div>
-        <h3>🌍 You Travel</h3>
+
+        <div class="step-number">
+          04
+        </div>
+
+        <h3>
+          🌍 You Travel
+        </h3>
+
         <p>
           You approve the plan, we handle the bookings, and you show up
           ready to enjoy every moment.
         </p>
+
       </div>
+
 
     </div>
 
   </section>
 
 
-  <!-- WHY DARIEL -->
+  <!-- =========================
+       WHY DARIEL
+  ========================= -->
 
   <section class="why" id="why-us">
 
-    <div class="section-label">Why Dariel Destinations</div>
+    <div class="section-label">
+      Why Dariel Destinations
+    </div>
 
-    <h2>Why Jamaicans Choose Us</h2>
+    <h2>
+      Why Jamaicans Choose Us
+    </h2>
+
 
     <div class="why-grid">
 
+
       <div class="why-item">
-        <h3>🇯🇲 Built for Jamaicans</h3>
+
+        <h3>
+          🇯🇲 Built for Jamaicans
+        </h3>
 
         <p>
           We understand the specific challenges Caribbean travelers face —
           visa processes, documentation requirements, and booking barriers
           that others don't have to think about. We navigate all of it for you.
         </p>
+
       </div>
 
+
       <div class="why-item">
-        <h3>💬 Personal Service on WhatsApp</h3>
+
+        <h3>
+          💬 Personal Service on WhatsApp
+        </h3>
 
         <p>
           No call centres. No automated emails. You deal directly with us —
           real people who are invested in making your trip everything it should be.
         </p>
+
       </div>
 
+
       <div class="why-item">
-        <h3>✨ Premium Without the Pressure</h3>
+
+        <h3>
+          ✨ Premium Without the Pressure
+        </h3>
 
         <p>
           We bring a luxury travel experience to every client regardless of budget.
           You get the same attention, care, and expertise whether you're planning
           a weekend trip or a two-week honeymoon.
         </p>
+
       </div>
 
+
       <div class="why-item">
-        <h3>🔒 We Handle Everything</h3>
+
+        <h3>
+          🔒 We Handle Everything
+        </h3>
 
         <p>
           From your first question to your final confirmation — we manage every
           detail so you never have to figure it out alone.
         </p>
+
       </div>
+
 
     </div>
 
   </section>
 
 
-  <!-- ABOUT -->
+  <!-- =========================
+       ABOUT
+  ========================= -->
 
   <section class="about">
 
     <div class="about-inner">
 
-      <div class="section-label">Our Story</div>
+      <div class="section-label">
+        Our Story
+      </div>
 
-      <h2>About Dariel Destinations</h2>
+      <h2>
+        About Dariel Destinations
+      </h2>
 
       <p>
         Dariel Destinations was founded in Jamaica by a couple with a simple
@@ -907,13 +1398,20 @@
   </section>
 
 
-  <!-- TESTIMONIALS -->
+  <!-- =========================
+       TESTIMONIALS
+  ========================= -->
 
   <section class="testimonials">
 
-    <div class="section-label">Testimonials</div>
+    <div class="section-label">
+      Testimonials
+    </div>
 
-    <h2>What Our Clients Say</h2>
+    <h2>
+      What Our Clients Say
+    </h2>
+
 
     <div class="testimonial-box">
 
@@ -922,7 +1420,12 @@
         for Jamaican travelers. Yours could be next."
       </p>
 
-      <a href="GOOGLE_FORM_LINK" class="button">
+      <a
+        href="https://forms.gle/SVi7MkJRvvi5hE9F9"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="button"
+      >
         Be One of Our First Clients
       </a>
 
@@ -931,41 +1434,66 @@
   </section>
 
 
-  <!-- FINAL CTA -->
+  <!-- =========================
+       FINAL CTA
+  ========================= -->
 
   <section class="final-cta">
 
-    <div class="section-label">Your Journey Starts Here</div>
+    <div class="section-label">
+      Your Journey Starts Here
+    </div>
 
-    <h2>Ready to See the World?</h2>
+    <h2>
+      Ready to See the World?
+    </h2>
 
     <p>
       Whether you need visa clarity, a fully planned trip, or the honeymoon
       of your dreams — Dariel Destinations is ready to make it happen.
+
       <br><br>
+
       Fill out our inquiry form and we'll be in touch within 4 hours.
     </p>
 
-    <a href="GOOGLE_FORM_LINK" class="button">
-      Start Planning
+
+    <a
+      href="https://forms.gle/SVi7MkJRvvi5hE9F9"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="button"
+    >
+      START PLANNING
     </a>
 
-    <a href="WHATSAPP_LINK" class="button button-outline">
-      WhatsApp Us
+
+    <!-- Replace the # below with your actual WhatsApp Business link -->
+
+    <a
+      href="#"
+      class="button button-outline"
+    >
+      WHATSAPP US
     </a>
 
   </section>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
 
     <div class="footer-grid">
 
+
       <div class="footer-brand">
 
-        <h3>Dariel Destinations</h3>
+        <h3>
+          Dariel Destinations
+        </h3>
 
         <p>
           Jamaica's Premium Travel Planning Company
@@ -973,20 +1501,28 @@
 
       </div>
 
+
       <div class="footer-contact">
 
-        <p>📧 darieldestinations@gmail.com</p>
+        <p>
+          📧
+          <a href="mailto:darieldestinations@gmail.com">
+            darieldestinations@gmail.com
+          </a>
+        </p>
 
         <p>
           📲
-          <a href="WHATSAPP_LINK">
+          <a href="#">
             WhatsApp Us
           </a>
         </p>
 
       </div>
 
+
     </div>
+
 
     <div class="copyright">
 
@@ -995,7 +1531,7 @@
       </span>
 
       <span>
-        ✈️ Visa Guidance · Custom Itineraries · Honeymoon Planning
+        Visa Guidance · Custom Itineraries · Honeymoon Planning
       </span>
 
     </div>
