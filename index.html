@@ -1488,6 +1488,751 @@
     }
 
 
+
+
+    /* ========================================
+       DETAILS / INCLUDED
+    ======================================== */
+
+    .included {
+
+      background: var(--navy);
+
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+    }
+
+
+    .included-grid {
+
+      margin-top: 55px;
+
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 20px;
+
+    }
+
+
+    .included-card {
+
+      padding: 34px 30px;
+
+      background: rgba(2, 11, 23, 0.28);
+
+      border: 1px solid rgba(214, 169, 61, 0.18);
+
+    }
+
+
+    .included-card h3 {
+
+      font-size: 1.7rem;
+
+      margin-bottom: 10px;
+
+    }
+
+
+    .included-card > p {
+
+      color: #B9C6D1;
+
+      margin-bottom: 22px;
+
+    }
+
+
+    .included-card ul {
+
+      list-style: none;
+
+    }
+
+
+    .included-card li {
+
+      color: #D6E0E8;
+
+      padding: 10px 0;
+
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+    }
+
+
+    .included-card li::before {
+
+      content: "✦";
+
+      color: var(--gold-bright);
+
+      margin-right: 10px;
+
+    }
+
+
+    /* ========================================
+       AFTER YOU REACH OUT
+    ======================================== */
+
+    .after-reach {
+
+      background:
+
+        linear-gradient(
+          180deg,
+          var(--navy-2),
+          var(--midnight)
+        );
+
+    }
+
+
+    .after-grid {
+
+      margin-top: 55px;
+
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 20px;
+
+    }
+
+
+    .after-card {
+
+      padding: 30px 24px;
+
+      border: 1px solid rgba(214, 169, 61, 0.18);
+
+      background: rgba(2, 11, 23, 0.25);
+
+    }
+
+
+    .after-card .step-num {
+
+      margin-bottom: 18px;
+
+    }
+
+
+    .after-card h3 {
+
+      font-size: 1.35rem;
+
+      margin-bottom: 12px;
+
+    }
+
+
+    .after-card p {
+
+      color: #AEBBC7;
+
+      font-size: 0.95rem;
+
+    }
+
+
+    .after-closing {
+
+      margin-top: 38px;
+
+      color: var(--gold-bright);
+
+      font-size: 1.15rem;
+
+      font-style: italic;
+
+    }
+
+
+    /* ========================================
+       WHAT TO EXPECT
+    ======================================== */
+
+    .expect {
+
+      background: var(--blue-soft);
+
+    }
+
+
+    .expect-grid {
+
+      margin-top: 55px;
+
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 20px;
+
+    }
+
+
+    .expect-item {
+
+      padding: 30px;
+
+      background: rgba(2, 11, 23, 0.22);
+
+      border: 1px solid rgba(255, 255, 255, 0.08);
+
+      border-top: 2px solid var(--gold);
+
+    }
+
+
+    .expect-icon {
+
+      color: var(--gold-bright);
+
+      font-size: 1.4rem;
+
+      margin-bottom: 18px;
+
+    }
+
+
+    .expect-item h3 {
+
+      font-size: 1.35rem;
+
+      margin-bottom: 10px;
+
+    }
+
+
+    .expect-item p {
+
+      color: #C1CDD6;
+
+      font-size: 0.96rem;
+
+    }
+
+
+    /* ========================================
+       MEET THE FOUNDERS
+    ======================================== */
+
+    .founder-section {
+
+      background: var(--navy);
+
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+    }
+
+
+    .founder-grid {
+
+      display: grid;
+
+      grid-template-columns: 0.85fr 1.15fr;
+
+      gap: 75px;
+
+      align-items: center;
+
+    }
+
+
+    .founder-photo {
+
+      min-height: 460px;
+
+      border: 1px solid rgba(214, 169, 61, 0.32);
+
+      display: grid;
+
+      place-items: center;
+
+      text-align: center;
+
+      padding: 35px;
+
+      background:
+
+        linear-gradient(
+          145deg,
+          rgba(16, 56, 95, 0.75),
+          rgba(2, 11, 23, 0.92)
+        );
+
+      position: relative;
+
+      overflow: hidden;
+
+    }
+
+
+    .founder-photo::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 300px;
+
+      height: 300px;
+
+      border: 1px solid rgba(214, 169, 61, 0.14);
+
+      border-radius: 50%;
+
+      right: -110px;
+
+      bottom: -120px;
+
+    }
+
+
+    .photo-placeholder {
+
+      position: relative;
+
+      z-index: 1;
+
+      max-width: 260px;
+
+    }
+
+
+    .photo-placeholder span {
+
+      display: block;
+
+      color: var(--gold-bright);
+
+      font-size: 2rem;
+
+      margin-bottom: 18px;
+
+    }
+
+
+    .photo-placeholder strong {
+
+      display: block;
+
+      font-size: 1.35rem;
+
+      margin-bottom: 10px;
+
+    }
+
+
+    .photo-placeholder p {
+
+      color: #AEBBC7;
+
+      font-size: 0.93rem;
+
+    }
+
+
+    .founder-copy p {
+
+      color: var(--muted);
+
+      margin-top: 18px;
+
+      font-size: 1.04rem;
+
+    }
+
+
+    .founder-names {
+
+      color: var(--gold-bright) !important;
+
+      font-style: italic;
+
+      font-size: 1.18rem !important;
+
+      margin-top: 26px !important;
+
+    }
+
+
+    /* ========================================
+       FAQ
+    ======================================== */
+
+    .faq {
+
+      background:
+
+        linear-gradient(
+          180deg,
+          var(--navy-2),
+          var(--navy)
+        );
+
+    }
+
+
+    .faq-wrap {
+
+      max-width: 900px;
+
+      margin: 52px auto 0;
+
+    }
+
+
+    .faq-group {
+
+      margin-bottom: 38px;
+
+    }
+
+
+    .faq-group h3 {
+
+      color: var(--gold-bright);
+
+      font-family: Arial, sans-serif;
+
+      font-size: 0.75rem;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 15px;
+
+    }
+
+
+    .faq details {
+
+      border-top: 1px solid rgba(255, 255, 255, 0.11);
+
+      padding: 0;
+
+    }
+
+
+    .faq details:last-child {
+
+      border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+
+    }
+
+
+    .faq summary {
+
+      list-style: none;
+
+      cursor: pointer;
+
+      padding: 22px 48px 22px 0;
+
+      position: relative;
+
+      font-size: 1.12rem;
+
+      color: #F1F4F7;
+
+    }
+
+
+    .faq summary::-webkit-details-marker {
+
+      display: none;
+
+    }
+
+
+    .faq summary::after {
+
+      content: "+";
+
+      position: absolute;
+
+      right: 4px;
+
+      top: 16px;
+
+      color: var(--gold-bright);
+
+      font-size: 1.7rem;
+
+      font-family: Arial, sans-serif;
+
+      font-weight: 300;
+
+    }
+
+
+    .faq details[open] summary::after {
+
+      content: "−";
+
+    }
+
+
+    .faq-answer {
+
+      padding: 0 48px 23px 0;
+
+      color: #B8C5D0;
+
+    }
+
+
+    .visa-note {
+
+      margin-top: 50px;
+
+      padding: 30px;
+
+      border-left: 2px solid var(--gold);
+
+      background: rgba(2, 11, 23, 0.3);
+
+    }
+
+
+    .visa-note h3 {
+
+      font-size: 1.45rem;
+
+      margin-bottom: 12px;
+
+    }
+
+
+    .visa-note p {
+
+      color: #B8C5D0;
+
+      margin-top: 12px;
+
+    }
+
+
+    /* ========================================
+       POLICY MODALS
+    ======================================== */
+
+    .policy-links {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 14px 20px;
+
+      justify-content: flex-end;
+
+    }
+
+
+    .policy-btn {
+
+      background: none;
+
+      border: none;
+
+      color: #6F808D;
+
+      font: inherit;
+
+      cursor: pointer;
+
+      padding: 0;
+
+      text-decoration: underline;
+
+      text-underline-offset: 4px;
+
+      transition: 0.25s;
+
+    }
+
+
+    .policy-btn:hover {
+
+      color: var(--gold-bright);
+
+    }
+
+
+    .modal {
+
+      display: none;
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 3000;
+
+      background: rgba(0, 0, 0, 0.74);
+
+      padding: 25px;
+
+      overflow-y: auto;
+
+    }
+
+
+    .modal.open {
+
+      display: grid;
+
+      place-items: center;
+
+    }
+
+
+    .modal-box {
+
+      width: min(760px, 100%);
+
+      max-height: min(85vh, 820px);
+
+      overflow-y: auto;
+
+      position: relative;
+
+      padding: 52px 42px 38px;
+
+      background: #071525;
+
+      border: 1px solid rgba(214, 169, 61, 0.42);
+
+      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.5);
+
+    }
+
+
+    .modal-close {
+
+      position: absolute;
+
+      top: 14px;
+
+      right: 16px;
+
+      width: 42px;
+
+      height: 42px;
+
+      border: 1px solid rgba(214, 169, 61, 0.35);
+
+      background: transparent;
+
+      color: var(--gold-bright);
+
+      font-size: 1.5rem;
+
+      cursor: pointer;
+
+    }
+
+
+    .modal-box h2 {
+
+      font-size: clamp(2rem, 5vw, 3.5rem);
+
+      margin-bottom: 22px;
+
+    }
+
+
+    .modal-box h3 {
+
+      margin: 26px 0 9px;
+
+      font-size: 1.2rem;
+
+    }
+
+
+    .modal-box p {
+
+      color: #B8C5D0;
+
+      margin-bottom: 14px;
+
+    }
+
+
+    .modal-box .small-note {
+
+      color: var(--gold-bright);
+
+      font-style: italic;
+
+      margin-top: 25px;
+
+    }
+
+
+    @media (max-width: 900px) {
+
+      .included-grid,
+      .after-grid,
+      .expect-grid,
+      .founder-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .founder-grid {
+
+        gap: 45px;
+
+      }
+
+
+      .founder-photo {
+
+        min-height: 360px;
+
+      }
+
+
+      .policy-links {
+
+        justify-content: flex-start;
+
+      }
+
+    }
+
+
+    @media (max-width: 560px) {
+
+      .modal {
+
+        padding: 12px;
+
+      }
+
+
+      .modal-box {
+
+        padding: 52px 24px 28px;
+
+      }
+
+    }
+
+
     /* ========================================
        MOBILE
     ======================================== */
@@ -1838,6 +2583,12 @@
         <li>
           <a href="#why">
             Why Us
+          </a>
+        </li>
+
+        <li>
+          <a href="#faq">
+            FAQ
           </a>
         </li>
 
@@ -2227,6 +2978,91 @@
 
 
 
+
+
+    <!-- ========================================
+         WHAT'S INCLUDED
+    ======================================== -->
+
+    <section class="section included">
+
+      <div class="container">
+
+        <div class="eyebrow">
+          What's Included
+        </div>
+
+        <h2>
+          A clearer idea of
+          <br>
+          <span class="gold-text">
+            how we can help.
+          </span>
+        </h2>
+
+        <p class="lead">
+          Every journey is different. These are examples of the kinds
+          of support and planning we may provide based on the service
+          you choose and your individual travel needs.
+        </p>
+
+        <div class="included-grid">
+
+          <article class="included-card">
+
+            <h3>The Clarity Session</h3>
+
+            <p>For travelers who need answers before moving forward.</p>
+
+            <ul>
+              <li>Travel and destination questions</li>
+              <li>Visa-related questions and considerations</li>
+              <li>Travel document guidance</li>
+              <li>Understanding possible next steps</li>
+              <li>General trip planning questions</li>
+            </ul>
+
+          </article>
+
+          <article class="included-card">
+
+            <h3>The Signature Trip</h3>
+
+            <p>For travelers who want a journey shaped around them.</p>
+
+            <ul>
+              <li>Destination research and recommendations</li>
+              <li>Personalized itinerary planning</li>
+              <li>Flight and accommodation considerations</li>
+              <li>Activity and experience recommendations</li>
+              <li>Planning shaped around your priorities</li>
+            </ul>
+
+          </article>
+
+          <article class="included-card">
+
+            <h3>The Couples Escape</h3>
+
+            <p>For two people creating a journey worth remembering.</p>
+
+            <ul>
+              <li>Destination ideas for your occasion</li>
+              <li>Romantic accommodation options</li>
+              <li>Personalized experiences</li>
+              <li>Thoughtful itinerary planning</li>
+              <li>Special occasion considerations</li>
+            </ul>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
     <!-- ========================================
          PROCESS
     ======================================== -->
@@ -2348,6 +3184,71 @@
 
 
 
+
+
+    <!-- ========================================
+         AFTER YOU REACH OUT
+    ======================================== -->
+
+    <section class="section after-reach">
+
+      <div class="container">
+
+        <div class="eyebrow">
+          After You Reach Out
+        </div>
+
+        <h2>
+          A clear first step
+          <br>
+          toward your
+          <span class="gold-text">
+            next journey.
+          </span>
+        </h2>
+
+        <p class="lead">
+          Wondering what happens after you complete the form?
+          Here's what you can expect from the moment you reach out.
+        </p>
+
+        <div class="after-grid">
+
+          <article class="after-card">
+            <div class="step-num">01</div>
+            <h3>Tell Us About Your Trip</h3>
+            <p>Complete our planning form and share a little about where you would like to go, when you want to travel, and what matters most to you.</p>
+          </article>
+
+          <article class="after-card">
+            <div class="step-num">02</div>
+            <h3>We Review Your Request</h3>
+            <p>We take the time to review your information and better understand the kind of support you are looking for.</p>
+          </article>
+
+          <article class="after-card">
+            <div class="step-num">03</div>
+            <h3>We'll Get in Touch</h3>
+            <p>A member of our team will contact you to discuss your journey, answer initial questions, and talk about the best way we can help.</p>
+          </article>
+
+          <article class="after-card">
+            <div class="step-num">04</div>
+            <h3>We Take the Next Step Together</h3>
+            <p>Once we identify the right service for your needs, we'll provide the information you need to move forward with greater clarity.</p>
+          </article>
+
+        </div>
+
+        <p class="after-closing">
+          No pressure. No confusing process. Just a clear first step toward your next journey.
+        </p>
+
+      </div>
+
+    </section>
+
+
     <!-- ========================================
          WHY US
     ======================================== -->
@@ -2448,6 +3349,74 @@
 
 
 
+
+
+    <!-- ========================================
+         WHAT YOU CAN EXPECT
+    ======================================== -->
+
+    <section class="section expect">
+
+      <div class="container">
+
+        <div class="eyebrow">
+          What You Can Expect
+        </div>
+
+        <h2>
+          Travel planning with
+          <br>
+          more
+          <span class="gold-text">
+            care behind it.
+          </span>
+        </h2>
+
+        <div class="expect-grid">
+
+          <article class="expect-item">
+            <div class="expect-icon">✦</div>
+            <h3>Clear Communication</h3>
+            <p>We believe you should understand what is happening at every stage and what your next step may be.</p>
+          </article>
+
+          <article class="expect-item">
+            <div class="expect-icon">✦</div>
+            <h3>Personal Attention</h3>
+            <p>Your journey is not just another booking. We take time to understand what matters to you and what you want from the experience.</p>
+          </article>
+
+          <article class="expect-item">
+            <div class="expect-icon">✦</div>
+            <h3>Honest Guidance</h3>
+            <p>If something is unclear, requires further consideration, or is outside our scope, we'll communicate honestly and transparently.</p>
+          </article>
+
+          <article class="expect-item">
+            <div class="expect-icon">✦</div>
+            <h3>Thoughtful Planning</h3>
+            <p>The details can shape the entire experience. We approach every journey with care and attention to what matters most.</p>
+          </article>
+
+          <article class="expect-item">
+            <div class="expect-icon">✦</div>
+            <h3>Less Overwhelm</h3>
+            <p>International travel can involve many moving parts. Our role is to help bring more structure and clarity to the planning process.</p>
+          </article>
+
+          <article class="expect-item">
+            <div class="expect-icon">✦</div>
+            <h3>A Human Experience</h3>
+            <p>No feeling like you are just another number. Dariel Destinations is built around real conversations, real questions, and personal service.</p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
     <!-- ========================================
          OUR STORY
     ======================================== -->
@@ -2473,18 +3442,32 @@
 
 
         <p>
-          Dariel Destinations was founded by a Jamaican couple
-          with a simple belief: our people deserve to experience
-          the world beautifully, confidently, and without
-          unnecessary stress.
+          Dariel Destinations began with a simple question:
+          why should seeing the world feel so complicated?
         </p>
 
 
         <p>
-          We created the kind of travel company we wished existed,
-          one that understands the Jamaican traveler, values
-          personal service, and believes every journey deserves
-          genuine care.
+          For many Jamaican travelers, an international journey can
+          come with more questions than answers. Where do I begin?
+          What documents do I need? Do I need a visa? How do I plan
+          everything without missing an important detail?
+        </p>
+
+
+        <p>
+          We understood those questions. So we created Dariel
+          Destinations — a travel company built around the belief
+          that travel planning should feel clear, personal, and exciting.
+        </p>
+
+
+        <p>
+          We're not here simply to help you choose a destination.
+          We're here to help you move from
+          <span class="gold-text">“I wish I could go”</span>
+          to
+          <span class="gold-text">“I'm ready to go.”</span>
         </p>
 
 
@@ -2497,6 +3480,223 @@
 
     </section>
 
+
+
+
+
+    <!-- ========================================
+         MEET THE FOUNDERS
+    ======================================== -->
+
+    <section class="section founder-section">
+
+      <div class="container founder-grid">
+
+        <!-- Replace this placeholder with your founder photo later -->
+        <div class="founder-photo">
+
+          <div class="photo-placeholder">
+
+            <span>✦</span>
+
+            <strong>Your Founder Photo Goes Here</strong>
+
+            <p>
+              Replace this placeholder with a professional photo of
+              Sydonya and Darian when you are ready.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="founder-copy">
+
+          <div class="eyebrow">
+            Meet the Founders
+          </div>
+
+          <h2>
+            The people behind
+            <br>
+            your
+            <span class="gold-text">
+              next journey.
+            </span>
+          </h2>
+
+          <p>
+            Dariel Destinations was founded by Sydonya and Darian Coke,
+            a Jamaican couple with a shared belief that experiencing
+            the world should feel exciting — not overwhelming.
+          </p>
+
+          <p>
+            As travelers ourselves, we understand that planning an
+            international journey can involve far more than choosing a
+            destination. Questions about travel documents, flights,
+            accommodation, budgets, and unfamiliar processes can quickly
+            make an exciting idea feel complicated.
+          </p>
+
+          <p>
+            We created Dariel Destinations to bring more clarity, care,
+            and personal attention to that experience. Our goal is simple:
+            to help Jamaican travelers approach the world with greater
+            confidence and spend less time feeling overwhelmed by the details.
+          </p>
+
+          <p>
+            Because behind every journey is a person, a reason for going,
+            and a story waiting to happen.
+          </p>
+
+          <p class="founder-names">
+            Sydonya & Darian Coke<br>
+            Founders, Dariel Destinations
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         FAQ
+    ======================================== -->
+
+    <section class="section faq" id="faq">
+
+      <div class="container">
+
+        <div class="eyebrow">
+          Frequently Asked Questions
+        </div>
+
+        <h2>
+          A few things you may
+          <br>
+          want to
+          <span class="gold-text">
+            know.
+          </span>
+        </h2>
+
+        <p class="lead">
+          Clear answers before you take the next step.
+        </p>
+
+        <div class="faq-wrap">
+
+          <div class="faq-group">
+
+            <h3>Before You Begin</h3>
+
+            <details>
+              <summary>What does Dariel Destinations help with?</summary>
+              <div class="faq-answer">
+                We provide personalized travel planning and guidance for Jamaican travelers. Depending on the service you choose, we can help bring clarity to your travel plans, guide you through travel-related questions, and help shape a journey around your destination, priorities, and travel style.
+              </div>
+            </details>
+
+            <details>
+              <summary>Can you help me if I don't know where I want to go?</summary>
+              <div class="faq-answer">
+                Absolutely. You don't need to have every detail figured out before reaching out. Tell us about the kind of experience you're looking for, your budget, and what matters most to you, and we'll help bring your ideas into focus.
+              </div>
+            </details>
+
+            <details>
+              <summary>How far in advance should I start planning my trip?</summary>
+              <div class="faq-answer">
+                The earlier, the better. Planning ahead can give you more options and more time to prepare. However, if your trip is coming up soon, feel free to reach out and we'll let you know how we may be able to help.
+              </div>
+            </details>
+
+            <details>
+              <summary>Do you only work with Jamaican travelers?</summary>
+              <div class="faq-answer">
+                Dariel Destinations was created with Jamaican travelers at heart. Our services are designed around understanding the questions and considerations that can come with traveling internationally from Jamaica.
+              </div>
+            </details>
+
+          </div>
+
+
+          <div class="faq-group">
+
+            <h3>Visa Guidance</h3>
+
+            <details>
+              <summary>Can you guarantee that my visa will be approved?</summary>
+              <div class="faq-answer">
+                No. Visa decisions are made solely by the relevant embassy, consulate, immigration authority, or border officials. While we may provide travel-related guidance to help you better understand the process and prepare for next steps, we cannot guarantee the approval of any visa or travel document.
+              </div>
+            </details>
+
+            <details>
+              <summary>Can you help me if I'm not sure whether I need a visa?</summary>
+              <div class="faq-answer">
+                We can help provide travel-related guidance and help you understand what information you may need to consider before moving forward with your travel plans. Final requirements should always be confirmed with the relevant official authority.
+              </div>
+            </details>
+
+          </div>
+
+
+          <div class="faq-group">
+
+            <h3>Working With Us</h3>
+
+            <details>
+              <summary>How do I get started?</summary>
+              <div class="faq-answer">
+                Simply complete our trip planning form and tell us a little about what you're looking for. We'll review your information and get in touch about the next best step.
+              </div>
+            </details>
+
+            <details>
+              <summary>How much do your services cost?</summary>
+              <div class="faq-answer">
+                The cost of our services depends on the type of support and level of planning your journey requires. We'll provide clarity about the applicable service and fees before you move forward.
+              </div>
+            </details>
+
+            <details>
+              <summary>Can you plan trips for couples?</summary>
+              <div class="faq-answer">
+                Yes. The Couples Escape is designed for honeymoons, romantic getaways, anniversaries, and meaningful experiences for two.
+              </div>
+            </details>
+
+          </div>
+
+
+          <div class="visa-note">
+
+            <h3>Important Visa Information</h3>
+
+            <p>
+              Dariel Destinations provides travel planning and travel-related guidance based on the information available to us and the individual circumstances discussed with our clients. We are not an embassy, consulate, immigration authority, or government agency.
+            </p>
+
+            <p>
+              Visa approval, refusal, processing times, and entry decisions are determined solely by the relevant embassy, consulate, immigration authority, or border officials. Dariel Destinations cannot guarantee the approval of any visa or travel document.
+            </p>
+
+            <p>
+              Travel requirements can change. Clients are responsible for ensuring they meet all applicable entry and travel requirements and should confirm requirements with the relevant official authorities.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
 
 
     <!-- ========================================
@@ -2677,6 +3877,12 @@
               </a>
             </li>
 
+            <li>
+              <a href="#faq">
+                FAQ
+              </a>
+            </li>
+
           </ul>
 
         </div>
@@ -2735,9 +3941,25 @@
         </span>
 
 
-        <span>
-          Visa Guidance · Custom Trips · Couples Escapes
-        </span>
+        <div class="policy-links">
+
+          <button class="policy-btn" data-modal="privacy-modal">
+            Privacy Policy
+          </button>
+
+          <button class="policy-btn" data-modal="terms-modal">
+            Terms & Conditions
+          </button>
+
+          <button class="policy-btn" data-modal="booking-modal">
+            Booking & Cancellation
+          </button>
+
+          <button class="policy-btn" data-modal="visa-modal">
+            Visa Disclaimer
+          </button>
+
+        </div>
 
       </div>
 
@@ -2746,6 +3968,168 @@
 
   </footer>
 
+
+
+
+
+  <!-- ========================================
+       POLICY MODALS
+  ======================================== -->
+
+  <div class="modal" id="privacy-modal" aria-hidden="true">
+
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
+
+      <button class="modal-close" aria-label="Close privacy policy">×</button>
+
+      <h2 id="privacy-title">Privacy Policy</h2>
+
+      <p>
+        Dariel Destinations respects your privacy and is committed to handling personal information responsibly.
+      </p>
+
+      <h3>Information You Share</h3>
+
+      <p>
+        Information you submit through our website, planning forms, or direct communication may be used to respond to your inquiry, understand your travel needs, communicate with you, and provide information about our services.
+      </p>
+
+      <h3>How We Use Information</h3>
+
+      <p>
+        We use information only for legitimate business and service-related purposes connected to your inquiry or journey. We do not sell your personal information.
+      </p>
+
+      <h3>Travel Information</h3>
+
+      <p>
+        Depending on the service requested, you may choose to share travel-related information with us. You should provide only information that is reasonably necessary for the service you are requesting.
+      </p>
+
+      <h3>Updates</h3>
+
+      <p>
+        This policy may be updated as Dariel Destinations grows and our services develop. Any updated version will be posted on this website.
+      </p>
+
+      <p class="small-note">
+        Please review this policy before submitting personal information through our website.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="modal" id="terms-modal" aria-hidden="true">
+
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="terms-title">
+
+      <button class="modal-close" aria-label="Close terms and conditions">×</button>
+
+      <h2 id="terms-title">Terms & Conditions</h2>
+
+      <p>
+        By using the Dariel Destinations website or contacting us about our services, you agree to use our website and communications lawfully and respectfully.
+      </p>
+
+      <h3>Service Scope</h3>
+
+      <p>
+        The specific services provided to a client will depend on the service selected and the details agreed upon before work begins. We will aim to provide clear information about the support we can offer before you move forward.
+      </p>
+
+      <h3>Travel Decisions</h3>
+
+      <p>
+        Travelers remain responsible for their own travel decisions, bookings, documents, payments, and compliance with applicable travel and entry requirements unless otherwise expressly agreed in writing.
+      </p>
+
+      <h3>Third Parties</h3>
+
+      <p>
+        Airlines, hotels, embassies, government authorities, tour operators, and other third parties operate independently from Dariel Destinations. Their policies, availability, prices, schedules, and decisions may change.
+      </p>
+
+      <h3>Updates</h3>
+
+      <p>
+        These terms may be updated as our business and services develop. The version published on this website is the current website version.
+      </p>
+
+      <p class="small-note">
+        For any paid service, you may receive additional service-specific terms before work begins.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="modal" id="booking-modal" aria-hidden="true">
+
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="booking-title">
+
+      <button class="modal-close" aria-label="Close booking and cancellation policy">×</button>
+
+      <h2 id="booking-title">Booking & Cancellation</h2>
+
+      <p>
+        Dariel Destinations is still finalizing its service-specific booking, payment, and cancellation procedures. Before any paid service begins, clients will be provided with the relevant information for their selected service.
+      </p>
+
+      <h3>Before You Move Forward</h3>
+
+      <p>
+        We will communicate the applicable service, scope of support, and any relevant fees or payment requirements before you are asked to proceed with a paid service.
+      </p>
+
+      <h3>Third-Party Travel Providers</h3>
+
+      <p>
+        If a journey involves airlines, hotels, tour providers, or other third-party suppliers, their individual booking, change, refund, and cancellation policies may apply.
+      </p>
+
+      <p class="small-note">
+        This section should be updated with your final official payment, cancellation, and refund rules before you begin accepting bookings or service payments.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="modal" id="visa-modal" aria-hidden="true">
+
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="visa-title">
+
+      <button class="modal-close" aria-label="Close visa disclaimer">×</button>
+
+      <h2 id="visa-title">Visa Disclaimer</h2>
+
+      <p>
+        Dariel Destinations provides travel planning and travel-related guidance based on the information available to us and the individual circumstances discussed with our clients.
+      </p>
+
+      <p>
+        We are not an embassy, consulate, immigration authority, government agency, or decision-making authority for visas or entry permissions.
+      </p>
+
+      <h3>No Guarantee of Approval</h3>
+
+      <p>
+        Visa approval, refusal, processing times, and entry decisions are determined solely by the relevant embassy, consulate, immigration authority, or border officials. Dariel Destinations cannot guarantee the approval of any visa, travel document, or entry permission.
+      </p>
+
+      <h3>Changing Requirements</h3>
+
+      <p>
+        Travel and entry requirements can change. Travelers remain responsible for confirming current requirements with the relevant official authorities and ensuring they meet all applicable requirements before traveling.
+      </p>
+
+    </div>
+
+  </div>
 
 
   <!-- ========================================
@@ -2837,6 +4221,125 @@
 
       }
     );
+
+
+    /* ========================================
+       POLICY MODALS
+    ======================================== */
+
+    const modalButtons =
+      document.querySelectorAll(".policy-btn");
+
+
+    const modals =
+      document.querySelectorAll(".modal");
+
+
+    const closeModals = () => {
+
+      modals.forEach(
+        modal => {
+
+          modal.classList.remove("open");
+
+          modal.setAttribute(
+            "aria-hidden",
+            "true"
+          );
+
+        }
+      );
+
+
+      document.body.classList.remove(
+        "menu-open"
+      );
+
+    };
+
+
+    modalButtons.forEach(
+      button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            const modal =
+              document.getElementById(
+                button.dataset.modal
+              );
+
+
+            if (modal) {
+
+              modal.classList.add("open");
+
+              modal.setAttribute(
+                "aria-hidden",
+                "false"
+              );
+
+
+              document.body.classList.add(
+                "menu-open"
+              );
+
+            }
+
+          }
+        );
+
+      }
+    );
+
+
+    document.querySelectorAll(".modal-close")
+      .forEach(
+        button => {
+
+          button.addEventListener(
+            "click",
+            closeModals
+          );
+
+        }
+      );
+
+
+    modals.forEach(
+      modal => {
+
+        modal.addEventListener(
+          "click",
+          event => {
+
+            if (event.target === modal) {
+
+              closeModals();
+
+            }
+
+          }
+        );
+
+      }
+    );
+
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if (event.key === "Escape") {
+
+          closeModals();
+
+        }
+
+      }
+    );
+
 
   </script>
 
