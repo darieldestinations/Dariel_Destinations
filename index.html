@@ -1,3930 +1,1956 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta
     name="description"
-    content="Dariel Destinations - Premium travel planning from Jamaica to the world."
+    content="Dariel Destinations — personal travel planning and concierge support for thoughtfully planned journeys."
   >
 
-  <title>Dariel Destinations | From Jamaica to the World</title>
-
+  <title>Dariel Destinations | Travel Planning, Made Personal</title>
 
   <style>
-
-    /* ========================================
-       COLORS
-    ======================================== */
-
     :root {
-
-      --midnight: #020B17;
-
-      --navy: #06172B;
-
-      --navy-2: #0A2340;
-
-      --blue: #10385F;
-
-      --blue-2: #164B78;
-
-      --blue-soft: #173B5B;
-
-
-      /* GOLD INSPIRED BY YOUR LOGO */
-
-      --gold: #D6A93D;
-
-      --gold-bright: #F2C85B;
-
-      --gold-deep: #A97818;
-
-
-      --white: #FFFFFF;
-
-      --cream: #F7F3EA;
-
-      --text: #E9EFF5;
-
-      --muted: #AAB8C6;
-
-      --line: rgba(214, 169, 61, 0.22);
-
+      --ice: #050505;
+      --white: #0D0D0F;
+      --powder: #152B49;
+      --powder-2: #0A101A;
+      --royal: #4D7CFF;
+      --royal-dark: #3567F3;
+      --navy: #F7F9FC;
+      --text: #F4F6FA;
+      --muted: #A8B1C0;
+      --line: rgba(255, 255, 255, 0.10);
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.40);
+      --shadow-soft: 0 12px 34px rgba(0, 0, 0, 0.30);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 14px;
+      --max: 1200px;
     }
-
-
-    /* ========================================
-       RESET
-    ======================================== */
 
     * {
-
       box-sizing: border-box;
-
       margin: 0;
-
       padding: 0;
-
     }
-
 
     html {
-
       scroll-behavior: smooth;
-
     }
-
 
     body {
-
-      font-family: Georgia, "Times New Roman", serif;
-
-      background: var(--navy);
-
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--ice);
       color: var(--text);
-
-      line-height: 1.65;
-
+      line-height: 1.6;
       overflow-x: hidden;
-
     }
 
-
-    body.menu-open {
-
+    body.menu-open,
+    body.modal-open {
       overflow: hidden;
-
     }
-
 
     a {
-
       color: inherit;
-
       text-decoration: none;
-
     }
 
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
 
     img {
-
-      max-width: 100%;
-
       display: block;
-
+      max-width: 100%;
     }
-
 
     .container {
-
-      width: min(1180px, 88%);
-
-      margin: auto;
-
+      width: min(var(--max), 90%);
+      margin: 0 auto;
     }
-
 
     .section {
-
-      padding: 115px 0;
-
+      padding: 105px 0;
       position: relative;
-
     }
 
+    .section-soft {
+      background: #090A0D;
+    }
 
-    /* ========================================
-       TEXT
-    ======================================== */
-
-    .eyebrow {
-
-      display: flex;
-
+    .section-kicker {
+      display: inline-flex;
       align-items: center;
-
-      gap: 13px;
-
-      color: var(--gold-bright);
-
-      font-family: Arial, sans-serif;
-
-      font-weight: 700;
-
-      font-size: 0.72rem;
-
-      letter-spacing: 3px;
-
-      text-transform: uppercase;
-
+      gap: 10px;
       margin-bottom: 18px;
-
+      color: var(--royal);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
     }
 
-
-    .eyebrow::before {
-
+    .section-kicker::before {
       content: "";
-
-      width: 38px;
-
-      height: 1px;
-
-      background: var(--gold);
-
+      width: 28px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--royal);
     }
-
 
     h1,
     h2,
     h3 {
-
-      font-weight: 400;
-
+      color: var(--navy);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.02;
     }
 
+    h1 {
+      font-size: clamp(3.6rem, 8vw, 7rem);
+    }
 
     h2 {
-
-      font-size: clamp(2.5rem, 5vw, 5rem);
-
-      line-height: 1.02;
-
-      letter-spacing: -1.5px;
-
+      font-size: clamp(2.6rem, 5.5vw, 5rem);
     }
 
+    h3 {
+      font-size: 1.45rem;
+      letter-spacing: -0.025em;
+    }
+
+    p {
+      color: var(--muted);
+    }
 
     .lead {
-
-      color: var(--muted);
-
       max-width: 690px;
-
+      margin-top: 24px;
       font-size: 1.08rem;
-
-      margin-top: 22px;
-
     }
 
-
-    .gold-text {
-
-      color: var(--gold-bright);
-
+    .text-blue {
+      color: var(--royal);
     }
 
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
 
-    /* ========================================
-       NAVIGATION
-    ======================================== */
+    .btn-primary {
+      background: var(--royal);
+      color: #FFFFFF;
+      box-shadow: 0 12px 25px rgba(46, 99, 232, 0.18);
+    }
 
+    .btn-primary:hover {
+      background: var(--royal-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 16px 30px rgba(46, 99, 232, 0.24);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--navy);
+      border-color: var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .btn-secondary:hover {
+      background: var(--white);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* HEADER */
     .site-header {
-
       position: fixed;
-
       top: 0;
-
       left: 0;
-
       width: 100%;
-
       z-index: 1000;
-
       transition: 0.3s ease;
-
     }
-
 
     .site-header.scrolled {
-
-      background: rgba(2, 11, 23, 0.94);
-
+      background: rgba(5, 5, 5, 0.88);
       backdrop-filter: blur(18px);
-
       border-bottom: 1px solid var(--line);
-
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.16);
-
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.28);
     }
 
-
     .nav {
-
       width: min(1320px, 92%);
-
-      margin: auto;
-
-      min-height: 88px;
-      
-      padding-bottom: 5px;
-
+      min-height: 86px;
+      margin: 0 auto;
       display: flex;
-
       align-items: center;
-
       justify-content: space-between;
-
-      gap: 25px;
-
+      gap: 28px;
     }
 
     .brand {
-      padding-top: 12px;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
     }
-
 
     .brand img {
-
       width: 205px;
-
       height: auto;
-
     }
-
 
     .nav-links {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 30px;
-
       list-style: none;
-
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
     }
-
 
     .nav-links a {
-
-      font-family: Arial, sans-serif;
-
-      font-weight: 600;
-
-      font-size: 0.72rem;
-
-      letter-spacing: 1.4px;
-
-      text-transform: uppercase;
-
-      color: #DCE5ED;
-
-      transition: 0.25s;
-
+      color: var(--navy);
+      font-size: 0.87rem;
+      font-weight: 750;
+      transition: 0.2s ease;
     }
-
 
     .nav-links a:hover {
-
-      color: var(--gold-bright);
-
+      color: var(--royal);
     }
 
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
     .nav-cta {
-
-      display: inline-flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      padding: 13px 19px;
-
-      background: var(--gold-bright);
-
-      color: var(--midnight);
-
-      font-family: Arial, sans-serif;
-
-      font-weight: 700;
-
-      font-size: 0.73rem;
-
-      letter-spacing: 1.25px;
-
-      text-transform: uppercase;
-
-      transition: 0.3s ease;
-
+      min-height: 46px;
+      padding: 0 19px;
+      font-size: 0.84rem;
     }
-
-
-    .nav-cta:hover {
-
-      background: #FFE08A;
-
-      transform: translateY(-2px);
-
-    }
-
 
     .menu-toggle {
-
       display: none;
-
-      background: none;
-
-      border: none;
-
-      color: white;
-
-      font-size: 1.7rem;
-
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: #0D0D0F;
+      color: var(--navy);
+      font-size: 1.35rem;
       cursor: pointer;
-
     }
 
-
-    /* ========================================
-       BUTTONS
-    ======================================== */
-
-    .btn-primary,
-    .btn-secondary {
-
-      display: inline-flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      gap: 10px;
-
-      min-height: 54px;
-
-      padding: 0 25px;
-
-      font-family: Arial, sans-serif;
-
-      font-weight: 700;
-
-      font-size: 0.73rem;
-
-      letter-spacing: 1.25px;
-
-      text-transform: uppercase;
-
-      transition: 0.3s ease;
-
-    }
-
-
-    .btn-primary {
-
-      background: var(--gold-bright);
-
-      color: var(--midnight);
-
-    }
-
-
-    .btn-primary:hover {
-
-      background: #FFE08A;
-
-      transform: translateY(-2px);
-
-    }
-
-
-    .btn-secondary {
-
-      border: 1px solid rgba(242, 200, 91, 0.58);
-
-      color: white;
-
-      background: rgba(2, 11, 23, 0.22);
-
-    }
-
-
-    .btn-secondary:hover {
-
-      border-color: var(--gold-bright);
-
-      background: rgba(214, 169, 61, 0.13);
-
-      transform: translateY(-2px);
-
-    }
-
-
-    /* ========================================
-       HERO
-    ======================================== */
-
+    /* HERO */
     .hero {
-
-      min-height: 100vh;
-
-      display: flex;
-
-      align-items: center;
-
       position: relative;
-
-      isolation: isolate;
-
+      min-height: 100vh;
+      padding: 138px 0 70px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
       background:
-
-        linear-gradient(
-          90deg,
-          rgba(2, 11, 23, 0.97) 0%,
-          rgba(4, 18, 34, 0.92) 39%,
-          rgba(6, 23, 43, 0.58) 68%,
-          rgba(6, 23, 43, 0.35) 100%
-        ),
-
-        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2200&q=88")
-
-        center/cover;
-
+        radial-gradient(circle at 84% 22%, rgba(77, 124, 255, 0.18), transparent 29%),
+        radial-gradient(circle at 8% 76%, rgba(70, 155, 255, 0.10), transparent 26%),
+        #050505;
     }
 
-
-    .hero::after {
-
+    .hero::before {
       content: "";
-
       position: absolute;
-
-      inset: 0;
-
-      z-index: -1;
-
-      background:
-
-        radial-gradient(
-          circle at 76% 48%,
-          rgba(214, 169, 61, 0.12),
-          transparent 28%
-        );
-
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      border: 1px solid rgba(46, 99, 232, 0.08);
+      top: 80px;
+      right: -180px;
     }
-
 
     .hero-grid {
-
-      width: min(1320px, 88%);
-
+      width: min(1320px, 90%);
       margin: 0 auto;
-
-      padding-top: 100px;
-
       display: grid;
-
-      grid-template-columns: minmax(0, 1fr) 330px;
-
-      align-items: end;
-
-      gap: 60px;
-
+      grid-template-columns: minmax(0, 1.02fr) minmax(420px, 0.98fr);
+      gap: 72px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
     }
-
 
     .hero-copy {
-
-      padding: 95px 0 105px;
-
+      max-width: 760px;
     }
 
-
-    .hero-copy .eyebrow {
-
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      color: var(--royal);
+      font-size: 0.78rem;
+      font-weight: 800;
       margin-bottom: 24px;
-
     }
 
-
-    .hero h1 {
-
-      max-width: 800px;
-
-      font-size: clamp(3.8rem, 8vw, 7.8rem);
-
-      line-height: 0.92;
-
-      letter-spacing: -3px;
-
+    .hero h1 span {
+      color: var(--royal);
     }
 
-
-    .hero h1 em {
-
-      font-style: italic;
-
-      color: var(--gold-bright);
-
+    .hero-copy > p {
+      max-width: 655px;
+      margin: 26px 0 34px;
+      font-size: 1.12rem;
+      color: #B2BBC8;
     }
-
-
-    .hero p {
-
-      max-width: 630px;
-
-      font-size: 1.17rem;
-
-      color: #D8E1E9;
-
-      margin: 28px 0 34px;
-
-    }
-
 
     .hero-actions {
-
       display: flex;
-
       flex-wrap: wrap;
-
-      gap: 14px;
-
+      gap: 12px;
     }
 
-
-    .hero-card {
-
-      margin-bottom: 72px;
-
-      padding: 27px 25px;
-
-      border: 1px solid rgba(214, 169, 61, 0.34);
-
-      background:
-
-        linear-gradient(
-          145deg,
-          rgba(16, 56, 95, 0.84),
-          rgba(2, 11, 23, 0.78)
-        );
-
-      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
-
-      backdrop-filter: blur(10px);
-
-    }
-
-
-    .hero-card small {
-
-      display: block;
-
-      color: var(--gold-bright);
-
-      font-family: Arial, sans-serif;
-
-      font-weight: 700;
-
-      font-size: 0.67rem;
-
-      letter-spacing: 2px;
-
-      text-transform: uppercase;
-
-      margin-bottom: 12px;
-
-    }
-
-
-    .hero-card strong {
-
-      display: block;
-
-      font-size: 1.45rem;
-
-      line-height: 1.25;
-
-      margin-bottom: 12px;
-
-    }
-
-
-    .hero-card p {
-
-      margin: 0;
-
-      color: #E7EDF2;
-
-      font-size: 0.95rem;
-
-    }
-
-
-    /* ========================================
-       SERVICE STRIP
-    ======================================== */
-
-    .trust-strip {
-
-      background: var(--midnight);
-
-      border-top: 1px solid var(--line);
-
-      border-bottom: 1px solid var(--line);
-
-    }
-
-
-    .trust-grid {
-
-      min-height: 105px;
-
-      display: grid;
-
-      grid-template-columns: repeat(4, 1fr);
-
-      align-items: center;
-
-    }
-
-
-    .trust-item {
-
-      padding: 22px 30px;
-
-      border-right: 1px solid var(--line);
-
-      color: #D6E0E8;
-
-      text-align: center;
-
-      font-family: Arial, sans-serif;
-
-      font-weight: 600;
-
-      font-size: 0.73rem;
-
-      letter-spacing: 1.2px;
-
-      text-transform: uppercase;
-
-    }
-
-
-    .trust-item:last-child {
-
-      border-right: none;
-
-    }
-
-
-    .trust-item span {
-
-      color: var(--gold-bright);
-
-      font-size: 1.2rem;
-
-      margin-right: 7px;
-
-    }
-
-
-    /* ========================================
-       WHO WE ARE
-    ======================================== */
-
-    .intro {
-
-      background:
-
-        radial-gradient(
-          circle at 8% 15%,
-          rgba(214, 169, 61, 0.08),
-          transparent 24%
-        ),
-
-        var(--navy);
-
-    }
-
-
-    .intro-grid {
-
-      display: grid;
-
-      grid-template-columns: 0.9fr 1.1fr;
-
-      gap: 90px;
-
-      align-items: center;
-
-    }
-
-
-    .intro-statement {
-
-      border-left: 1px solid var(--gold);
-
-      padding-left: 32px;
-
-    }
-
-
-    .intro-statement p {
-
-      font-size: 1.25rem;
-
-      color: #DDE6EE;
-
-      margin-top: 22px;
-
-    }
-
-
-    .intro-copy p {
-
-      color: var(--muted);
-
-      margin-bottom: 18px;
-
-      font-size: 1.05rem;
-
-    }
-
-
-    /* ========================================
-       SERVICES
-    ======================================== */
-
-    .services {
-
-      background:
-
-        linear-gradient(
-          180deg,
-          var(--navy-2),
-          var(--navy)
-        );
-
-      border-top: 1px solid rgba(255, 255, 255, 0.04);
-
-    }
-
-
-    .services-head {
-
+    .hero-trust {
       display: flex;
-
-      justify-content: space-between;
-
-      align-items: end;
-
-      gap: 35px;
-
-      margin-bottom: 55px;
-
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-top: 26px;
+      color: #9DA7B6;
+      font-size: 0.84rem;
+      font-weight: 700;
     }
 
+    .hero-trust span::before {
+      content: "•";
+      color: var(--royal);
+      margin-right: 8px;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 610px;
+    }
+
+    .hero-photo {
+      position: absolute;
+      inset: 18px 42px 72px 40px;
+      border-radius: 34px;
+      overflow: hidden;
+      box-shadow: 0 35px 80px rgba(0, 0, 0, 0.55);
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.34)),
+        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=88")
+        center/cover;
+    }
+
+    .float-card {
+      position: absolute;
+      background: rgba(13, 13, 15, 0.90);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(18px);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .trip-card {
+      left: 0;
+      bottom: 8px;
+      width: 260px;
+      padding: 21px;
+    }
+
+    .trip-card small,
+    .mini-card small {
+      display: block;
+      color: var(--royal);
+      font-size: 0.69rem;
+      font-weight: 900;
+      letter-spacing: 1.15px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .trip-card strong {
+      display: block;
+      color: var(--navy);
+      font-size: 1.16rem;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .trip-card p {
+      font-size: 0.86rem;
+    }
+
+    .mini-card {
+      top: 0;
+      right: 0;
+      width: 218px;
+      padding: 18px;
+    }
+
+    .mini-card strong {
+      display: block;
+      color: var(--navy);
+      font-size: 0.98rem;
+      margin-bottom: 5px;
+    }
+
+    .stamp {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--powder);
+      color: var(--royal);
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    /* QUICK VALUE STRIP */
+    .value-strip {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #09090B;
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .value-item {
+      min-height: 104px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      gap: 11px;
+      border-right: 1px solid var(--line);
+      color: var(--navy);
+      text-align: center;
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    .value-item:last-child {
+      border-right: 0;
+    }
+
+    .value-dot {
+      width: 9px;
+      height: 9px;
+      background: var(--royal);
+      border-radius: 50%;
+      flex: 0 0 auto;
+    }
+
+    /* SERVICES */
+    .services-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
 
     .services-head .lead {
-
-      max-width: 470px;
-
+      max-width: 475px;
+      margin: 0;
     }
-
 
     .service-grid {
-
       display: grid;
-
       grid-template-columns: repeat(3, 1fr);
-
-      gap: 20px;
-
+      gap: 22px;
     }
-
 
     .service-card {
-
-      min-height: 520px;
-
-      padding: 38px 32px 30px;
-
-      position: relative;
-
-      overflow: hidden;
-
-      background:
-
-        linear-gradient(
-          160deg,
-          rgba(20, 75, 120, 0.52),
-          rgba(5, 20, 36, 0.9)
-        );
-
-      border: 1px solid rgba(214, 169, 61, 0.2);
-
+      min-height: 465px;
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025));
+      box-shadow: var(--shadow-soft);
       display: flex;
-
       flex-direction: column;
-
-      transition: 0.35s ease;
-
+      position: relative;
+      overflow: hidden;
+      transition: 0.3s ease;
     }
-
-
-    .service-card::after {
-
-      content: "";
-
-      position: absolute;
-
-      right: -60px;
-
-      bottom: -90px;
-
-      width: 210px;
-
-      height: 210px;
-
-      border: 1px solid rgba(214, 169, 61, 0.12);
-
-      border-radius: 50%;
-
-    }
-
 
     .service-card:hover {
-
-      transform: translateY(-8px);
-
-      border-color: rgba(242, 200, 91, 0.65);
-
-      box-shadow: 0 25px 55px rgba(0, 0, 0, 0.28);
-
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
     }
 
-
-    .service-number {
-
-      color: var(--gold-bright);
-
-      font-family: Arial, sans-serif;
-
-      font-weight: 700;
-
-      font-size: 0.72rem;
-
-      letter-spacing: 2px;
-
-      margin-bottom: 44px;
-
+    .service-card.featured {
+      background: linear-gradient(145deg, #315CDB, #4D7CFF);
+      color: #FFFFFF;
+      border-color: transparent;
     }
 
+    .service-card.featured h3,
+    .service-card.featured .service-label,
+    .service-card.featured li,
+    .service-card.featured .service-link {
+      color: #FFFFFF;
+    }
+
+    .service-card.featured p {
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .service-card.featured .service-icon {
+      background: rgba(255, 255, 255, 0.14);
+      color: var(--white);
+    }
+
+    .service-label {
+      color: var(--royal);
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
 
     .service-icon {
-
       width: 52px;
-
       height: 52px;
-
-      border: 1px solid var(--gold);
-
       display: grid;
-
       place-items: center;
-
-      font-size: 1.35rem;
-
-      margin-bottom: 24px;
-
+      border-radius: 16px;
+      margin-bottom: 26px;
+      background: var(--powder-2);
+      color: var(--royal);
+      font-size: 1.22rem;
+      font-weight: 900;
     }
-
 
     .service-card h3 {
-
-      font-size: 2rem;
-
-      line-height: 1.1;
-
-      margin-bottom: 18px;
-
+      font-size: 1.7rem;
+      margin-bottom: 13px;
     }
 
-
-    .service-card p {
-
-      color: #B9C6D1;
-
-      font-size: 0.98rem;
-
-      margin-bottom: 28px;
-
-    }
-
-
-    .card-link {
-
-      margin-top: auto;
-
-      color: var(--gold-bright);
-
-      font-family: Arial, sans-serif;
-
-      font-weight: 700;
-
-      font-size: 0.72rem;
-
-      letter-spacing: 1.3px;
-
-      text-transform: uppercase;
-
-    }
-
-
-    /* ========================================
-       PROCESS
-    ======================================== */
-
-    .process {
-
-      background:
-
-        linear-gradient(
-          135deg,
-          rgba(2, 11, 23, 0.96),
-          rgba(6, 23, 43, 0.93)
-        ),
-
-        url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=2200&q=85")
-
-        center/cover;
-
-    }
-
-
-    .process .lead {
-
-      color: #C0CCD5;
-
-    }
-
-
-    .steps {
-
-      margin-top: 58px;
-
-      display: grid;
-
-      grid-template-columns: repeat(4, 1fr);
-
-      gap: 22px;
-
-    }
-
-
-    .step {
-
-      padding: 28px 20px 0;
-
-      border-top: 1px solid rgba(242, 200, 91, 0.42);
-
-    }
-
-
-    .step-num {
-
-      color: var(--gold-bright);
-
-      font-family: Arial, sans-serif;
-
-      font-weight: 700;
-
-      font-size: 0.75rem;
-
-      letter-spacing: 2px;
-
+    .service-card > p {
+      font-size: 0.96rem;
       margin-bottom: 22px;
-
     }
 
-
-    .step h3 {
-
-      font-size: 1.35rem;
-
-      margin-bottom: 12px;
-
+    .service-card ul {
+      list-style: none;
+      margin-bottom: 28px;
     }
 
-
-    .step p {
-
-      color: #AEBBC7;
-
-      font-size: 0.94rem;
-
+    .service-card li {
+      color: #A7B0BE;
+      font-size: 0.91rem;
+      padding: 8px 0;
     }
 
-
-    /* ========================================
-       WHY US
-    ======================================== */
-
-    .why {
-
-      background: var(--blue-soft);
-
+    .service-card li::before {
+      content: "✓";
+      color: var(--royal);
+      font-weight: 900;
+      margin-right: 9px;
     }
 
+    .service-card.featured li::before {
+      color: var(--white);
+    }
+
+    .service-link {
+      margin-top: auto;
+      color: var(--royal);
+      font-size: 0.9rem;
+      font-weight: 900;
+    }
+
+    /* WHY */
+    .why-wrap {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .why-copy .lead {
+      max-width: 540px;
+    }
 
     .why-grid {
-
-      margin-top: 55px;
-
       display: grid;
-
       grid-template-columns: repeat(2, 1fr);
-
-      gap: 20px;
-
+      gap: 16px;
     }
 
-
-    .why-item {
-
-      padding: 32px;
-
-      background: rgba(2, 11, 23, 0.22);
-
-      border: 1px solid rgba(255, 255, 255, 0.08);
-
-      border-left: 2px solid var(--gold);
-
+    .why-card {
+      padding: 26px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
     }
 
-
-    .why-item h3 {
-
-      font-size: 1.4rem;
-
-      margin-bottom: 10px;
-
+    .why-card .number {
+      color: var(--royal);
+      font-weight: 900;
+      font-size: 0.82rem;
+      margin-bottom: 24px;
     }
 
-
-    .why-item p {
-
-      color: #C1CDD6;
-
+    .why-card h3 {
+      margin-bottom: 9px;
     }
 
-
-    /* ========================================
-       OUR STORY
-    ======================================== */
-
-    .story {
-
-      background: var(--navy);
-
+    .why-card p {
+      font-size: 0.93rem;
     }
 
-
-    .story-wrap {
-
-      max-width: 950px;
-
-      margin: auto;
-
-      text-align: center;
-
+    /* PROCESS */
+    .process-head {
+      max-width: 760px;
+      margin-bottom: 50px;
     }
 
-
-    .story-wrap .eyebrow {
-
-      justify-content: center;
-
-    }
-
-
-    .story-wrap .eyebrow::after {
-
-      content: "";
-
-      width: 38px;
-
-      height: 1px;
-
-      background: var(--gold);
-
-    }
-
-
-    .story-wrap p {
-
-      color: #B8C5D0;
-
-      font-size: 1.08rem;
-
-      margin: 22px auto;
-
-      max-width: 850px;
-
-    }
-
-
-    .founders {
-
-      margin-top: 38px !important;
-
-      color: var(--gold-bright) !important;
-
-      font-style: italic;
-
-      font-size: 1.25rem !important;
-
-    }
-
-
-    /* ========================================
-       WORLD IMAGE
-    ======================================== */
-
-    .world {
-
-      padding: 0;
-
-      background: var(--midnight);
-
-      border-top: 1px solid var(--line);
-
-      border-bottom: 1px solid var(--line);
-
-    }
-
-
-    .world-inner {
-
-      min-height: 360px;
-
+    .steps {
       display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
 
+    .step {
+      min-height: 280px;
+      padding: 26px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.045);
+    }
+
+    .step-num {
+      width: 40px;
+      height: 40px;
+      display: grid;
       place-items: center;
-
-      text-align: center;
-
-      padding: 70px 8%;
-
-      background:
-
-        linear-gradient(
-          rgba(2, 11, 23, 0.74),
-          rgba(2, 11, 23, 0.85)
-        ),
-
-        url("https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=2200&q=85")
-
-        center/cover;
-
-    }
-
-
-    .world-inner h2 {
-
-      max-width: 850px;
-
-    }
-
-
-    .world-inner p {
-
-      color: #D5DEE5;
-
-      margin-top: 20px;
-
-    }
-
-
-    /* ========================================
-       FINAL CTA
-    ======================================== */
-
-    .final-cta {
-
-      background:
-
-        linear-gradient(
-          135deg,
-          var(--blue),
-          var(--navy-2)
-        );
-
-      overflow: hidden;
-
-    }
-
-
-    .final-cta::before,
-    .final-cta::after {
-
-      content: "";
-
-      position: absolute;
-
-      border: 1px solid rgba(214, 169, 61, 0.16);
-
       border-radius: 50%;
-
+      background: var(--powder);
+      color: var(--royal);
+      font-size: 0.77rem;
+      font-weight: 900;
+      margin-bottom: 38px;
     }
 
-
-    .final-cta::before {
-
-      width: 500px;
-
-      height: 500px;
-
-      right: -170px;
-
-      top: -180px;
-
+    .step h3 {
+      margin-bottom: 12px;
+      font-size: 1.32rem;
     }
 
-
-    .final-cta::after {
-
-      width: 300px;
-
-      height: 300px;
-
-      left: -100px;
-
-      bottom: -130px;
-
+    .step p {
+      font-size: 0.92rem;
     }
 
+    /* WHO IT'S FOR */
+    .fit-wrap {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 70px;
+      align-items: center;
+    }
 
-    .cta-box {
+    .fit-visual {
+      min-height: 520px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(10, 34, 70, 0.05), rgba(10, 34, 70, 0.22)),
+        url("https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1400&q=86")
+        center/cover;
+      box-shadow: var(--shadow);
+    }
 
+    .fit-list {
+      margin-top: 30px;
+      display: grid;
+      gap: 13px;
+    }
+
+    .fit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding: 16px 18px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+
+    .fit-check {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: var(--powder);
+      color: var(--royal);
+      display: grid;
+      place-items: center;
+      font-size: 0.72rem;
+      font-weight: 900;
+      flex: 0 0 auto;
+      margin-top: 1px;
+    }
+
+    .fit-item p {
+      color: #AFB8C4;
+      font-size: 0.96rem;
+    }
+
+    /* FOUNDERS */
+    .founders-wrap {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .founders-photo {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: var(--powder);
+      min-height: 500px;
+      box-shadow: var(--shadow);
+    }
+
+    .founders-photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
+      object-fit: cover;
+    }
+
+    .founders-copy p {
+      margin-top: 18px;
+      max-width: 600px;
+      font-size: 1.02rem;
+    }
+
+    .founder-names {
+      margin-top: 28px !important;
+      color: var(--navy) !important;
+      font-weight: 800;
+    }
+
+    /* FAQ */
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .faq-wrap {
+      border-top: 1px solid var(--line);
+    }
+
+    .faq details {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq summary {
+      list-style: none;
       position: relative;
+      padding: 23px 50px 23px 0;
+      cursor: pointer;
+      color: var(--navy);
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
 
-      z-index: 1;
+    .faq summary::-webkit-details-marker {
+      display: none;
+    }
 
-      max-width: 900px;
+    .faq summary::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: 18px;
+      color: var(--royal);
+      font-size: 1.45rem;
+      font-weight: 500;
+    }
 
-      margin: auto;
+    .faq details[open] summary::after {
+      content: "−";
+    }
 
+    .faq-answer {
+      padding: 0 45px 23px 0;
+      color: var(--muted);
+    }
+
+    .visa-note {
+      margin-top: 28px;
+      padding: 20px;
+      border-radius: 16px;
+      background: var(--powder-2);
+      border: 1px solid var(--line);
+    }
+
+    .visa-note strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 7px;
+    }
+
+    .visa-note p {
+      font-size: 0.88rem;
+    }
+
+    /* CTA */
+    .final-cta {
+      padding: 0 0 100px;
+      background: var(--ice);
+    }
+
+    .cta-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      padding: 82px 8%;
+      background: var(--royal);
+      color: #FFFFFF;
       text-align: center;
-
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.48);
     }
 
-
-    .cta-box .eyebrow {
-
-      justify-content: center;
-
-    }
-
-
-    .cta-box .eyebrow::after {
-
+    .cta-card::before,
+    .cta-card::after {
       content: "";
-
-      width: 38px;
-
-      height: 1px;
-
-      background: var(--gold);
-
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.14);
     }
 
-
-    .cta-box p {
-
-      max-width: 700px;
-
-      margin: 23px auto 34px;
-
-      color: #C9D5DE;
-
+    .cta-card::before {
+      width: 420px;
+      height: 420px;
+      top: -220px;
+      right: -80px;
     }
 
+    .cta-card::after {
+      width: 250px;
+      height: 250px;
+      bottom: -140px;
+      left: -60px;
+    }
+
+    .cta-card h2 {
+      position: relative;
+      z-index: 1;
+      color: #FFFFFF;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .cta-card p {
+      position: relative;
+      z-index: 1;
+      max-width: 650px;
+      margin: 24px auto 32px;
+      color: rgba(255, 255, 255, 0.79);
+      font-size: 1.05rem;
+    }
 
     .cta-actions {
-
+      position: relative;
+      z-index: 1;
       display: flex;
-
       justify-content: center;
-
       flex-wrap: wrap;
-
-      gap: 14px;
-
+      gap: 12px;
     }
 
+    .cta-card .btn-primary {
+      background: #FFFFFF;
+      color: var(--royal);
+      box-shadow: none;
+    }
 
-    /* ========================================
-       FOOTER
-    ======================================== */
+    .cta-card .btn-primary:hover {
+      background: #EAF1FF;
+    }
 
+    .cta-card .btn-secondary {
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.10);
+      border-color: rgba(255, 255, 255, 0.28);
+    }
+
+    .cta-card .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    /* FOOTER */
     footer {
-
-      background: #010812;
-
-      padding: 75px 0 25px;
-
+      padding: 64px 0 26px;
+      background: #08080A;
+      border-top: 1px solid var(--line);
     }
-
 
     .footer-grid {
-
       display: grid;
-
-      grid-template-columns: 1.2fr 0.8fr 0.8fr;
-
-      gap: 50px;
-
-      padding-bottom: 50px;
-
+      grid-template-columns: 1.3fr 0.65fr 0.85fr;
+      gap: 54px;
+      padding-bottom: 45px;
     }
-
 
     .footer-logo {
-
-      width: 245px;
-
-      margin-bottom: 20px;
-
+      width: 220px;
+      margin-bottom: 18px;
     }
-
 
     .footer-brand p {
-
-      color: #8393A0;
-
       max-width: 390px;
-
+      font-size: 0.93rem;
     }
-
 
     .footer-heading {
-
-      color: var(--gold-bright);
-
-      font-family: Arial, sans-serif;
-
-      font-weight: 700;
-
-      font-size: 0.68rem;
-
-      letter-spacing: 2px;
-
+      margin-bottom: 16px;
+      color: var(--navy);
+      font-size: 0.77rem;
+      font-weight: 900;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
-
-      margin-bottom: 20px;
-
     }
-
 
     .footer-links {
-
       list-style: none;
-
     }
-
 
     .footer-links li {
-
-      margin-bottom: 11px;
-
+      margin-bottom: 10px;
     }
-
 
     .footer-links a,
     .footer-contact a {
-
-      color: #AEBBC5;
-
-      transition: 0.25s;
-
+      color: var(--muted);
+      transition: 0.2s ease;
     }
-
 
     .footer-links a:hover,
     .footer-contact a:hover {
-
-      color: var(--gold-bright);
-
+      color: var(--royal);
     }
-
 
     .footer-contact p {
-
-      color: #AEBBC5;
-
-      margin-bottom: 12px;
-
+      margin-bottom: 10px;
+      font-size: 0.94rem;
     }
-
 
     .footer-bottom {
-
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-
-      padding-top: 24px;
-
+      padding-top: 23px;
+      border-top: 1px solid var(--line);
       display: flex;
-
       justify-content: space-between;
-
-      gap: 20px;
-
-      color: #6F808D;
-
-      font-family: Arial, sans-serif;
-
-      font-size: 0.7rem;
-
-      letter-spacing: 0.5px;
-
-    }
-
-
-
-
-    /* ========================================
-       DETAILS / INCLUDED
-    ======================================== */
-
-    .included {
-
-      background: var(--navy);
-
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-
-    }
-
-
-    .included-grid {
-
-      margin-top: 55px;
-
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 20px;
-
-    }
-
-
-    .included-card {
-
-      padding: 34px 30px;
-
-      background: rgba(2, 11, 23, 0.28);
-
-      border: 1px solid rgba(214, 169, 61, 0.18);
-
-    }
-
-
-    .included-card h3 {
-
-      font-size: 1.7rem;
-
-      margin-bottom: 10px;
-
-    }
-
-
-    .included-card > p {
-
-      color: #B9C6D1;
-
-      margin-bottom: 22px;
-
-    }
-
-
-    .included-card ul {
-
-      list-style: none;
-
-    }
-
-
-    .included-card li {
-
-      color: #D6E0E8;
-
-      padding: 10px 0;
-
-      border-top: 1px solid rgba(255, 255, 255, 0.07);
-
-    }
-
-
-    .included-card li::before {
-
-      content: "✦";
-
-      color: var(--gold-bright);
-
-      margin-right: 10px;
-
-    }
-
-
-    /* ========================================
-       AFTER YOU REACH OUT
-    ======================================== */
-
-    .after-reach {
-
-      background:
-
-        linear-gradient(
-          180deg,
-          var(--navy-2),
-          var(--midnight)
-        );
-
-    }
-
-
-    .after-grid {
-
-      margin-top: 55px;
-
-      display: grid;
-
-      grid-template-columns: repeat(4, 1fr);
-
-      gap: 20px;
-
-    }
-
-
-    .after-card {
-
-      padding: 30px 24px;
-
-      border: 1px solid rgba(214, 169, 61, 0.18);
-
-      background: rgba(2, 11, 23, 0.25);
-
-    }
-
-
-    .after-card .step-num {
-
-      margin-bottom: 18px;
-
-    }
-
-
-    .after-card h3 {
-
-      font-size: 1.35rem;
-
-      margin-bottom: 12px;
-
-    }
-
-
-    .after-card p {
-
-      color: #AEBBC7;
-
-      font-size: 0.95rem;
-
-    }
-
-
-    .after-closing {
-
-      margin-top: 38px;
-
-      color: var(--gold-bright);
-
-      font-size: 1.15rem;
-
-      font-style: italic;
-
-    }
-
-
-    /* ========================================
-       WHAT TO EXPECT
-    ======================================== */
-
-    .expect {
-
-      background: var(--blue-soft);
-
-    }
-
-
-    .expect-grid {
-
-      margin-top: 55px;
-
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 20px;
-
-    }
-
-
-    .expect-item {
-
-      padding: 30px;
-
-      background: rgba(2, 11, 23, 0.22);
-
-      border: 1px solid rgba(255, 255, 255, 0.08);
-
-      border-top: 2px solid var(--gold);
-
-    }
-
-
-    .expect-icon {
-
-      color: var(--gold-bright);
-
-      font-size: 1.4rem;
-
-      margin-bottom: 18px;
-
-    }
-
-
-    .expect-item h3 {
-
-      font-size: 1.35rem;
-
-      margin-bottom: 10px;
-
-    }
-
-
-    .expect-item p {
-
-      color: #C1CDD6;
-
-      font-size: 0.96rem;
-
-    }
-
-
-    /* ========================================
-       MEET THE FOUNDERS
-    ======================================== */
-
-    .founder-section {
-
-      background: var(--navy);
-
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-
-    }
-
-
-    .founder-grid {
-
-      display: grid;
-
-      grid-template-columns: 0.85fr 1.15fr;
-
-      gap: 75px;
-
+      gap: 24px;
       align-items: center;
-
+      color: #8E98A8;
+      font-size: 0.78rem;
     }
-
-
-    .founder-photo {
-
-      min-height: 460px;
-
-      border: 1px solid rgba(214, 169, 61, 0.32);
-
-      display: grid;
-
-      place-items: center;
-
-      text-align: center;
-
-      padding: 35px;
-
-      background:
-
-        linear-gradient(
-          145deg,
-          rgba(16, 56, 95, 0.75),
-          rgba(2, 11, 23, 0.92)
-        );
-
-      position: relative;
-
-      overflow: hidden;
-
-    }
-
-
-    .founder-photo::before {
-
-      content: "";
-
-      position: absolute;
-
-      width: 300px;
-
-      height: 300px;
-
-      border: 1px solid rgba(214, 169, 61, 0.14);
-
-      border-radius: 50%;
-
-      right: -110px;
-
-      bottom: -120px;
-
-    }
-
-
-    .photo-placeholder {
-
-      position: relative;
-
-      z-index: 1;
-
-      max-width: 260px;
-
-    }
-
-
-    .photo-placeholder span {
-
-      display: block;
-
-      color: var(--gold-bright);
-
-      font-size: 2rem;
-
-      margin-bottom: 18px;
-
-    }
-
-
-    .photo-placeholder strong {
-
-      display: block;
-
-      font-size: 1.35rem;
-
-      margin-bottom: 10px;
-
-    }
-
-
-    .photo-placeholder p {
-
-      color: #AEBBC7;
-
-      font-size: 0.93rem;
-
-    }
-
-
-    .founder-copy p {
-
-      color: var(--muted);
-
-      margin-top: 18px;
-
-      font-size: 1.04rem;
-
-    }
-
-
-    .founder-names {
-
-      color: var(--gold-bright) !important;
-
-      font-style: italic;
-
-      font-size: 1.18rem !important;
-
-      margin-top: 26px !important;
-
-    }
-
-
-    /* ========================================
-       FAQ
-    ======================================== */
-
-    .faq {
-
-      background:
-
-        linear-gradient(
-          180deg,
-          var(--navy-2),
-          var(--navy)
-        );
-
-    }
-
-
-    .faq-wrap {
-
-      max-width: 900px;
-
-      margin: 52px auto 0;
-
-    }
-
-
-    .faq-group {
-
-      margin-bottom: 38px;
-
-    }
-
-
-    .faq-group h3 {
-
-      color: var(--gold-bright);
-
-      font-family: Arial, sans-serif;
-
-      font-size: 0.75rem;
-
-      letter-spacing: 2px;
-
-      text-transform: uppercase;
-
-      margin-bottom: 15px;
-
-    }
-
-
-    .faq details {
-
-      border-top: 1px solid rgba(255, 255, 255, 0.11);
-
-      padding: 0;
-
-    }
-
-
-    .faq details:last-child {
-
-      border-bottom: 1px solid rgba(255, 255, 255, 0.11);
-
-    }
-
-
-    .faq summary {
-
-      list-style: none;
-
-      cursor: pointer;
-
-      padding: 22px 48px 22px 0;
-
-      position: relative;
-
-      font-size: 1.12rem;
-
-      color: #F1F4F7;
-
-    }
-
-
-    .faq summary::-webkit-details-marker {
-
-      display: none;
-
-    }
-
-
-    .faq summary::after {
-
-      content: "+";
-
-      position: absolute;
-
-      right: 4px;
-
-      top: 16px;
-
-      color: var(--gold-bright);
-
-      font-size: 1.7rem;
-
-      font-family: Arial, sans-serif;
-
-      font-weight: 300;
-
-    }
-
-
-    .faq details[open] summary::after {
-
-      content: "−";
-
-    }
-
-
-    .faq-answer {
-
-      padding: 0 48px 23px 0;
-
-      color: #B8C5D0;
-
-    }
-
-
-    .visa-note {
-
-      margin-top: 50px;
-
-      padding: 30px;
-
-      border-left: 2px solid var(--gold);
-
-      background: rgba(2, 11, 23, 0.3);
-
-    }
-
-
-    .visa-note h3 {
-
-      font-size: 1.45rem;
-
-      margin-bottom: 12px;
-
-    }
-
-
-    .visa-note p {
-
-      color: #B8C5D0;
-
-      margin-top: 12px;
-
-    }
-
-
-    /* ========================================
-       POLICY MODALS
-    ======================================== */
 
     .policy-links {
-
       display: flex;
-
       flex-wrap: wrap;
-
-      gap: 14px 20px;
-
       justify-content: flex-end;
-
+      gap: 12px 18px;
     }
-
 
     .policy-btn {
-
-      background: none;
-
-      border: none;
-
-      color: #6F808D;
-
-      font: inherit;
-
+      border: 0;
+      background: transparent;
+      color: #8E98A8;
       cursor: pointer;
-
-      padding: 0;
-
       text-decoration: underline;
-
       text-underline-offset: 4px;
-
-      transition: 0.25s;
-
     }
-
 
     .policy-btn:hover {
-
-      color: var(--gold-bright);
-
+      color: var(--royal);
     }
 
-
+    /* MODALS */
     .modal {
-
       display: none;
-
       position: fixed;
-
       inset: 0;
-
       z-index: 3000;
-
-      background: rgba(0, 0, 0, 0.74);
-
-      padding: 25px;
-
+      padding: 24px;
+      background: rgba(0, 0, 0, 0.76);
+      backdrop-filter: blur(8px);
       overflow-y: auto;
-
     }
-
 
     .modal.open {
-
       display: grid;
-
       place-items: center;
-
     }
-
 
     .modal-box {
-
-      width: min(760px, 100%);
-
-      max-height: min(85vh, 820px);
-
-      overflow-y: auto;
-
       position: relative;
-
-      padding: 52px 42px 38px;
-
-      background: #071525;
-
-      border: 1px solid rgba(214, 169, 61, 0.42);
-
-      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.5);
-
+      width: min(760px, 100%);
+      max-height: 86vh;
+      overflow-y: auto;
+      padding: 48px 38px 34px;
+      border-radius: 24px;
+      background: #101014;
+      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.60);
     }
-
 
     .modal-close {
-
       position: absolute;
-
-      top: 14px;
-
-      right: 16px;
-
-      width: 42px;
-
-      height: 42px;
-
-      border: 1px solid rgba(214, 169, 61, 0.35);
-
-      background: transparent;
-
-      color: var(--gold-bright);
-
-      font-size: 1.5rem;
-
+      top: 15px;
+      right: 15px;
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: var(--powder-2);
+      color: var(--navy);
       cursor: pointer;
-
+      font-size: 1.35rem;
     }
-
 
     .modal-box h2 {
-
-      font-size: clamp(2rem, 5vw, 3.5rem);
-
+      font-size: clamp(2rem, 4vw, 3.2rem);
       margin-bottom: 22px;
-
     }
-
 
     .modal-box h3 {
-
-      margin: 26px 0 9px;
-
-      font-size: 1.2rem;
-
+      font-size: 1.14rem;
+      margin: 25px 0 8px;
     }
-
 
     .modal-box p {
-
-      color: #B8C5D0;
-
-      margin-bottom: 14px;
-
+      margin-bottom: 12px;
+      font-size: 0.95rem;
     }
 
-
-    .modal-box .small-note {
-
-      color: var(--gold-bright);
-
-      font-style: italic;
-
-      margin-top: 25px;
-
+    .small-note {
+      margin-top: 22px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: var(--powder-2);
+      color: var(--royal) !important;
     }
 
-
-    @media (max-width: 900px) {
-
-      .included-grid,
-      .after-grid,
-      .expect-grid,
-      .founder-grid {
-
-        grid-template-columns: 1fr;
-
-      }
-
-
-      .founder-grid {
-
-        gap: 45px;
-
-      }
-
-
-      .founder-photo {
-
-        min-height: 360px;
-
-      }
-
-
-      .policy-links {
-
-        justify-content: flex-start;
-
-      }
-
-    }
-
-
-    @media (max-width: 560px) {
-
-      .modal {
-
-        padding: 12px;
-
-      }
-
-
-      .modal-box {
-
-        padding: 52px 24px 28px;
-
-      }
-
-    }
-
-
-    /* ========================================
-       MOBILE
-    ======================================== */
-
-    @media (max-width: 900px) {
-
-      .nav {
-
-        min-height: 76px;
-
-      }
-
-
-      .brand img {
-
-        width: 175px;
-
-      }
-
-
-      .menu-toggle {
-
-        display: block;
-
-      }
-
-
-      .nav-links {
-
-        position: fixed;
-
-        left: 0;
-
-        right: 0;
-
-        top: 76px;
-
-        background: rgba(2, 11, 23, 0.98);
-
-        border-top: 1px solid var(--line);
-
-        border-bottom: 1px solid var(--line);
-
-        padding: 25px 6% 30px;
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 23px;
-
-        transform: translateY(-130%);
-
-        opacity: 0;
-
-        pointer-events: none;
-
-        transition: 0.3s ease;
-
-      }
-
-
-      .nav-links.open {
-
-        transform: translateY(0);
-
-        opacity: 1;
-
-        pointer-events: auto;
-
-      }
-
-
-      .nav-cta {
-
-        display: none;
-
-      }
-
-
+    /* RESPONSIVE */
+    @media (max-width: 1040px) {
       .hero-grid {
-
         grid-template-columns: 1fr;
-
+        gap: 44px;
       }
-
-
-      .hero-card {
-
-        display: none;
-
-      }
-
 
       .hero-copy {
-
-        padding: 145px 0 85px;
-
+        max-width: 820px;
       }
 
+      .hero-visual {
+        min-height: 540px;
+      }
 
-      .intro-grid,
-      .service-grid,
-      .steps,
-      .footer-grid {
-
+      .why-wrap,
+      .fit-wrap,
+      .founders-wrap,
+      .faq-layout {
         grid-template-columns: 1fr;
-
+        gap: 45px;
       }
 
-
-      .services-head {
-
-        display: block;
-
+      .service-grid {
+        grid-template-columns: 1fr;
       }
-
-
-      .services-head .lead {
-
-        margin-top: 20px;
-
-      }
-
 
       .service-card {
-
         min-height: auto;
-
       }
 
-
-      .why-grid {
-
-        grid-template-columns: 1fr;
-
-      }
-
-
-      .trust-grid {
-
+      .steps {
         grid-template-columns: repeat(2, 1fr);
-
       }
-
-
-      .trust-item:nth-child(2) {
-
-        border-right: none;
-
-      }
-
-
-      .trust-item:nth-child(-n+2) {
-
-        border-bottom: 1px solid var(--line);
-
-      }
-
 
       .footer-grid {
-
-        gap: 35px;
-
+        grid-template-columns: 1fr 1fr;
       }
 
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
     }
 
+    @media (max-width: 900px) {
+      .nav {
+        min-height: 76px;
+      }
 
-    @media (max-width: 560px) {
+      .brand img {
+        width: 180px;
+      }
 
+      .menu-toggle {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav-actions .nav-cta {
+        display: none;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 76px;
+        left: 0;
+        right: 0;
+        padding: 25px 5% 30px;
+        background: rgba(5, 5, 5, 0.98);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+        transform: translateY(-130%);
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.28s ease;
+      }
+
+      .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .value-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .value-item:nth-child(2) {
+        border-right: 0;
+      }
+
+      .value-item:nth-child(-n+2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .services-head {
+        display: block;
+      }
+
+      .services-head .lead {
+        margin-top: 20px;
+      }
+    }
+
+    @media (max-width: 640px) {
       .section {
-
-        padding: 82px 0;
-
+        padding: 80px 0;
       }
 
-
-      .container,
-      .hero-grid {
-
-        width: min(90%, 1180px);
-
+      .hero {
+        padding: 120px 0 55px;
       }
 
-
-      .hero h1 {
-
-        font-size: clamp(3.35rem, 15vw, 5.1rem);
-
-        letter-spacing: -2px;
-
+      h1 {
+        font-size: clamp(3.1rem, 15vw, 4.5rem);
       }
-
-
-      .hero p {
-
-        font-size: 1.02rem;
-
-      }
-
 
       h2 {
-
-        font-size: clamp(2.5rem, 12vw, 3.6rem);
-
+        font-size: clamp(2.45rem, 12vw, 3.5rem);
       }
 
+      .hero-grid {
+        width: min(92%, 1320px);
+      }
 
       .hero-actions,
       .cta-actions {
-
         display: grid;
-
         grid-template-columns: 1fr;
-
       }
 
-
-      .btn-primary,
-      .btn-secondary {
-
+      .hero-actions .btn,
+      .cta-actions .btn {
         width: 100%;
-
       }
 
-
-      .intro-grid {
-
-        gap: 45px;
-
+      .hero-trust {
+        display: grid;
+        gap: 7px;
       }
 
-
-      .intro-statement {
-
-        padding-left: 22px;
-
+      .hero-visual {
+        min-height: 460px;
       }
 
+      .hero-photo {
+        inset: 15px 5px 70px 5px;
+      }
 
-      .trust-grid {
+      .mini-card {
+        width: 190px;
+        right: -4px;
+      }
 
+      .trip-card {
+        width: 225px;
+        left: -2px;
+      }
+
+      .value-grid,
+      .why-grid,
+      .steps {
         grid-template-columns: 1fr;
-
       }
 
-
-      .trust-item {
-
-        border-right: none;
-
-        border-bottom: 1px solid var(--line) !important;
-
+      .value-item {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
       }
 
-
-      .trust-item:last-child {
-
-        border-bottom: none !important;
-
+      .value-item:last-child {
+        border-bottom: 0;
       }
 
-
-      .service-card {
-
-        padding: 30px 25px;
-
+      .fit-visual,
+      .founders-photo,
+      .founders-photo img {
+        min-height: 390px;
       }
 
-
-      .why-grid {
-
-        margin-top: 35px;
-
+      .cta-card {
+        padding: 62px 7%;
+        border-radius: 28px;
       }
 
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
 
       .footer-bottom {
-
         flex-direction: column;
-
+        align-items: flex-start;
       }
 
+      .policy-links {
+        justify-content: flex-start;
+      }
+
+      .modal {
+        padding: 12px;
+      }
+
+      .modal-box {
+        padding: 50px 22px 28px;
+      }
     }
-
   </style>
-
 </head>
-
 
 <body>
 
-
-  <!-- ========================================
-       NAVIGATION
-  ======================================== -->
-
+  <!-- HEADER -->
   <header class="site-header" id="top">
-
     <nav class="nav">
 
-      <a
-        class="brand"
-        href="#top"
-        aria-label="Dariel Destinations home"
-      >
-
-       
-
-        <img
-          src="logo.PNG"
-          alt="Dariel Destinations logo"
-        >
-
+      <a class="brand" href="#top" aria-label="Dariel Destinations home">
+        <img src="logo.PNG" alt="Dariel Destinations logo">
       </a>
-
-
-      <button
-        class="menu-toggle"
-        aria-label="Open navigation"
-        aria-expanded="false"
-      >
-        ☰
-      </button>
-
 
       <ul class="nav-links">
-
-        <li>
-          <a href="#about">
-            About Us
-          </a>
-        </li>
-
-        <li>
-          <a href="#services">
-            Services
-          </a>
-        </li>
-
-        <li>
-          <a href="#process">
-            How It Works
-          </a>
-        </li>
-
-        <li>
-          <a href="#why">
-            Why Us
-          </a>
-        </li>
-
-        <li>
-          <a href="#faq">
-            FAQ
-          </a>
-        </li>
-
-        <li>
-          <a href="#contact">
-            Contact
-          </a>
-        </li>
-
+        <li><a href="#services">Services</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
 
+      <div class="nav-actions">
+        <a
+          class="btn btn-primary nav-cta"
+          href="https://forms.gle/SVi7MkJRvvi5hE9F9"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Start Planning
+        </a>
 
-      <a
-        class="nav-cta"
-        href="https://forms.gle/SVi7MkJRvvi5hE9F9"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Start Planning
-      </a>
+        <button
+          class="menu-toggle"
+          aria-label="Open navigation"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+      </div>
 
     </nav>
-
   </header>
-
 
 
   <main>
 
-
-    <!-- ========================================
-         HERO
-    ======================================== -->
-
+    <!-- HERO -->
     <section class="hero">
-
       <div class="hero-grid">
-
 
         <div class="hero-copy">
 
-          <div class="eyebrow">
-            Premium Travel Planning • Jamaica
+          <div class="hero-eyebrow">
+            ✈ Personal Travel Planning + Concierge
           </div>
 
-
           <h1>
-            From Jamaica
+            Travel planning,
             <br>
-            to the <em>World.</em>
+            <span>made easier.</span>
           </h1>
 
-
           <p>
-            Beautifully planned journeys for Jamaicans ready to
-            experience more of the world with expert guidance,
-            personal service, and less stress along the way.
+            Thoughtful, personalized travel planning for people who want
+            a better trip without the stress of figuring out every detail alone.
           </p>
 
-
           <div class="hero-actions">
-
             <a
-              class="btn-primary"
+              class="btn btn-primary"
               href="https://forms.gle/SVi7MkJRvvi5hE9F9"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Start Planning Your Trip →
+              Start Planning →
             </a>
 
-
-            <a
-              class="btn-secondary"
-              href="#services"
-            >
-              Explore Our Services
+            <a class="btn btn-secondary" href="#services">
+              Explore Services
             </a>
+          </div>
 
+          <div class="hero-trust">
+            <span>Custom itineraries</span>
+            <span>Travel guidance</span>
+            <span>Celebration trips</span>
           </div>
 
         </div>
 
+        <div class="hero-visual" aria-label="Travel inspiration">
 
-        <aside class="hero-card">
+          <div class="hero-photo"></div>
 
-          <small>
-            Your Journey, Handled
-          </small>
+          <div class="float-card mini-card">
+            <div class="stamp">D</div>
+            <small>Planning made personal</small>
+            <strong>Your trip. Your pace. Your priorities.</strong>
+          </div>
 
+          <div class="float-card trip-card">
+            <small>Your journey</small>
+            <strong>Less guesswork. More clarity.</strong>
+            <p>
+              Destination ideas, thoughtful research, itinerary planning,
+              and support that feels human.
+            </p>
+          </div>
 
-          <strong>
-            Visa clarity. Custom trips.
-            Unforgettable escapes.
-          </strong>
-
-
-          <p>
-            From your first question to your final itinerary,
-            we're here to make travel feel possible.
-          </p>
-
-        </aside>
-
+        </div>
 
       </div>
-
     </section>
 
 
+    <!-- VALUE STRIP -->
+    <section class="value-strip">
+      <div class="container value-grid">
 
-    <!-- ========================================
-         SERVICES STRIP
-    ======================================== -->
-
-    <section class="trust-strip">
-
-      <div class="container trust-grid">
-
-        <div class="trust-item">
-          <span>✦</span>
-          Visa Guidance
+        <div class="value-item">
+          <span class="value-dot"></span>
+          Travel Clarity
         </div>
 
-
-        <div class="trust-item">
-          <span>✦</span>
+        <div class="value-item">
+          <span class="value-dot"></span>
           Custom Itineraries
         </div>
 
-
-        <div class="trust-item">
-          <span>✦</span>
-          Flights & Hotels
+        <div class="value-item">
+          <span class="value-dot"></span>
+          Destination Research
         </div>
 
-
-        <div class="trust-item">
-          <span>✦</span>
-          Couples Escapes
+        <div class="value-item">
+          <span class="value-dot"></span>
+          Celebration Travel
         </div>
 
       </div>
-
     </section>
 
 
-
-    <!-- ========================================
-         ABOUT
-    ======================================== -->
-
-    <section
-      class="section intro"
-      id="about"
-    >
-
-      <div class="container intro-grid">
-
-
-        <div class="intro-statement">
-
-          <div class="eyebrow">
-            Who We Are
-          </div>
-
-
-          <h2>
-            Travel should feel like
-            <span class="gold-text">
-              freedom.
-            </span>
-          </h2>
-
-
-          <p>
-            Not confusing.
-            Not overwhelming.
-            Not like the world was built
-            for everyone except you.
-          </p>
-
-        </div>
-
-
-        <div class="intro-copy">
-
-          <p>
-            Dariel Destinations was created for Jamaican travelers
-            who want to see more, experience more, and move through
-            the world with confidence.
-          </p>
-
-
-          <p>
-            We understand that planning an international trip can
-            involve more than simply choosing a destination. From visa
-            questions and travel documents to flights, hotels,
-            itineraries, and all the little details in between,
-            the process can quickly become overwhelming.
-          </p>
-
-
-          <p>
-            That's where we come in. We bring clarity, care, and a
-            personalized approach to every journey so you can spend
-            less time worrying about how to get there and more time
-            imagining yourself already there.
-          </p>
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ========================================
-         SERVICES
-    ======================================== -->
-
-    <section
-      class="section services"
-      id="services"
-    >
-
+    <!-- SERVICES -->
+    <section class="section" id="services">
       <div class="container">
 
-
         <div class="services-head">
-
           <div>
-
-            <div class="eyebrow">
-              Our Services
-            </div>
-
-
+            <div class="section-kicker">How We Help</div>
             <h2>
-              Travel planning,
+              Choose the support
               <br>
-              made personal.
+              <span class="text-blue">that fits your trip.</span>
             </h2>
-
           </div>
 
-
           <p class="lead">
-            Whether you need answers before you begin or someone
-            to help shape the entire journey, we meet you where
-            you are.
+            Whether you need answers before you begin or want someone
+            to thoughtfully shape the entire journey, we meet you where you are.
           </p>
-
         </div>
-
-
 
         <div class="service-grid">
 
-
-          <!-- SERVICE 1 -->
-
           <article class="service-card">
+            <div class="service-label">01 / Clarity</div>
 
-            <div class="service-number">
-              01 / CLARITY
-            </div>
+            <div class="service-icon">?</div>
 
-
-            <div class="service-icon">
-              ✦
-            </div>
-
-
-            <h3>
-              The Clarity Session
-            </h3>
-
+            <h3>The Travel Clarity Session</h3>
 
             <p>
-              Not sure where to begin with your visa, travel
-              documents, or next steps? In a focused consultation, 
-              we help you understand what applies
-              to your situation and what you should do next.
+              For when you need answers before you make moves.
+              Get clear on your destination, travel requirements,
+              budget considerations, and next steps.
             </p>
 
+            <ul>
+              <li>Destination guidance</li>
+              <li>Entry and travel requirement guidance</li>
+              <li>Budget and planning direction</li>
+              <li>Clear next-step recommendations</li>
+            </ul>
 
             <a
-              class="card-link"
+              class="service-link"
               href="https://forms.gle/SVi7MkJRvvi5hE9F9"
               target="_blank"
               rel="noopener noreferrer"
             >
               Book a Clarity Session →
             </a>
-
           </article>
 
 
+          <article class="service-card featured">
+            <div class="service-label">02 / Most Popular</div>
 
-          <!-- SERVICE 2 -->
+            <div class="service-icon">✈</div>
 
-          <article class="service-card">
-
-            <div class="service-number">
-              02 / SIGNATURE
-            </div>
-
-
-            <div class="service-icon">
-              ✈
-            </div>
-
-
-            <h3>
-              The Signature Trip
-            </h3>
-
+            <h3>The Custom Journey</h3>
 
             <p>
-              Tell us where you want to go, what matters to you,
-              and the budget you have in mind. We help shape the
-              journey around your travel style, priorities, and
-              timeline.
+              Your main full-service planning experience.
+              We research and shape your trip around your style,
+              priorities, budget, and timeline.
             </p>
 
+            <ul>
+              <li>Personalized itinerary planning</li>
+              <li>Hotel and flight options</li>
+              <li>Activities and experiences</li>
+              <li>Transportation and trip structure</li>
+              <li>Pre-travel planning support</li>
+            </ul>
 
             <a
-              class="card-link"
+              class="service-link"
               href="https://forms.gle/SVi7MkJRvvi5hE9F9"
               target="_blank"
               rel="noopener noreferrer"
             >
               Plan My Trip →
             </a>
-
           </article>
 
 
-
-          <!-- SERVICE 3 -->
-
           <article class="service-card">
+            <div class="service-label">03 / Celebrate</div>
 
-            <div class="service-number">
-              03 / ESCAPE
-            </div>
+            <div class="service-icon">♡</div>
 
-
-            <div class="service-icon">
-              ♡
-            </div>
-
-
-            <h3>
-              The Couples Escape
-            </h3>
-
+            <h3>The Celebration Journey</h3>
 
             <p>
-              Honeymoons and romantic getaways deserve more than
-              ordinary planning. We help Jamaican couples create
-              an experience that feels effortless, intentional,
-              and unforgettable.
+              Thoughtful planning for the trips that mean a little more —
+              from honeymoons and anniversaries to birthdays and milestone moments.
             </p>
 
+            <ul>
+              <li>Honeymoons</li>
+              <li>Anniversaries</li>
+              <li>Birthdays</li>
+              <li>Romantic getaways</li>
+              <li>Milestone travel</li>
+            </ul>
 
             <a
-              class="card-link"
+              class="service-link"
               href="https://forms.gle/SVi7MkJRvvi5hE9F9"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Plan Our Escape →
+              Plan My Celebration →
             </a>
-
-          </article>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-
-
-    <!-- ========================================
-         WHAT'S INCLUDED
-    ======================================== -->
-
-    <section class="section included">
-
-      <div class="container">
-
-        <div class="eyebrow">
-          What's Included
-        </div>
-
-        <h2>
-          A clearer idea of
-          <br>
-          <span class="gold-text">
-            how we can help.
-          </span>
-        </h2>
-
-        <p class="lead">
-          Every journey is different. These are examples of the kinds
-          of support and planning we may provide based on the service
-          you choose and your individual travel needs.
-        </p>
-
-        <div class="included-grid">
-
-          <article class="included-card">
-
-            <h3>The Clarity Session</h3>
-
-            <p>For travelers who need answers before moving forward.</p>
-
-            <ul>
-              <li>Travel and destination questions</li>
-              <li>Visa-related questions and considerations</li>
-              <li>Travel document guidance</li>
-              <li>Understanding possible next steps</li>
-              <li>General trip planning questions</li>
-            </ul>
-
-          </article>
-
-          <article class="included-card">
-
-            <h3>The Signature Trip</h3>
-
-            <p>For travelers who want a journey shaped around them.</p>
-
-            <ul>
-              <li>Destination research and recommendations</li>
-              <li>Personalized itinerary planning</li>
-              <li>Flight and accommodation considerations</li>
-              <li>Activity and experience recommendations</li>
-              <li>Planning shaped around your priorities</li>
-            </ul>
-
-          </article>
-
-          <article class="included-card">
-
-            <h3>The Couples Escape</h3>
-
-            <p>For two people creating a journey worth remembering.</p>
-
-            <ul>
-              <li>Destination ideas for your occasion</li>
-              <li>Romantic accommodation options</li>
-              <li>Personalized experiences</li>
-              <li>Thoughtful itinerary planning</li>
-              <li>Special occasion considerations</li>
-            </ul>
-
           </article>
 
         </div>
 
       </div>
-
     </section>
 
 
-    <!-- ========================================
-         PROCESS
-    ======================================== -->
+    <!-- WHY DARIEL -->
+    <section class="section section-soft">
+      <div class="container why-wrap">
 
-    <section
-      class="section process"
-      id="process"
-    >
+        <div class="why-copy">
+          <div class="section-kicker">Why Dariel</div>
 
-      <div class="container">
+          <h2>
+            Travel planning
+            <br>
+            <span class="text-blue">with more care behind it.</span>
+          </h2>
 
-
-        <div class="eyebrow">
-          The Process
+          <p class="lead">
+            You are not just booking a trip. You are planning time,
+            memories, money, and experiences that matter.
+            We treat it that way.
+          </p>
         </div>
-
-
-        <h2>
-          From “I want to go”
-          <br>
-          to
-          <span class="gold-text">
-            “I'm going.”
-          </span>
-        </h2>
-
-
-        <p class="lead">
-          A simple, personal process designed to remove confusion
-          and bring your trip into focus.
-        </p>
-
-
-
-        <div class="steps">
-
-
-          <div class="step">
-
-            <div class="step-num">
-              01
-            </div>
-
-            <h3>
-              Tell Us About It
-            </h3>
-
-            <p>
-              Share where you want to go, when you want to travel,
-              and what matters most to you.
-            </p>
-
-          </div>
-
-
-
-          <div class="step">
-
-            <div class="step-num">
-              02
-            </div>
-
-            <h3>
-              We Connect
-            </h3>
-
-            <p>
-              We'll get to know your needs and discuss the best
-              way we can help with your journey.
-            </p>
-
-          </div>
-
-
-
-          <div class="step">
-
-            <div class="step-num">
-              03
-            </div>
-
-            <h3>
-              We Build
-            </h3>
-
-            <p>
-              We research and shape your travel plan around the
-              details that matter to you.
-            </p>
-
-          </div>
-
-
-
-          <div class="step">
-
-            <div class="step-num">
-              04
-            </div>
-
-            <h3>
-              You Go
-            </h3>
-
-            <p>
-              With a clearer plan and the details handled, you can
-              focus on enjoying the experience ahead.
-            </p>
-
-          </div>
-
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-
-
-    <!-- ========================================
-         AFTER YOU REACH OUT
-    ======================================== -->
-
-    <section class="section after-reach">
-
-      <div class="container">
-
-        <div class="eyebrow">
-          After You Reach Out
-        </div>
-
-        <h2>
-          A clear first step
-          <br>
-          toward your
-          <span class="gold-text">
-            next journey.
-          </span>
-        </h2>
-
-        <p class="lead">
-          Wondering what happens after you complete the form?
-          Here's what you can expect from the moment you reach out.
-        </p>
-
-        <div class="after-grid">
-
-          <article class="after-card">
-            <div class="step-num">01</div>
-            <h3>Tell Us About Your Trip</h3>
-            <p>Complete our planning form and share a little about where you would like to go, when you want to travel, and what matters most to you.</p>
-          </article>
-
-          <article class="after-card">
-            <div class="step-num">02</div>
-            <h3>We Review Your Request</h3>
-            <p>We take the time to review your information and better understand the kind of support you are looking for.</p>
-          </article>
-
-          <article class="after-card">
-            <div class="step-num">03</div>
-            <h3>We'll Get in Touch</h3>
-            <p>A member of our team will contact you to discuss your journey, answer initial questions, and talk about the best way we can help.</p>
-          </article>
-
-          <article class="after-card">
-            <div class="step-num">04</div>
-            <h3>We Take the Next Step Together</h3>
-            <p>Once we identify the right service for your needs, we'll provide the information you need to move forward with greater clarity.</p>
-          </article>
-
-        </div>
-
-        <p class="after-closing">
-          No pressure. No confusing process. Just a clear first step toward your next journey.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- ========================================
-         WHY US
-    ======================================== -->
-
-    <section
-      class="section why"
-      id="why"
-    >
-
-      <div class="container">
-
-
-        <div class="eyebrow">
-          Why Dariel Destinations
-        </div>
-
-
-        <h2>
-          Because your journey
-          <br>
-          deserves
-          <span class="gold-text">
-            more care.
-          </span>
-        </h2>
-
-
 
         <div class="why-grid">
 
-
-          <article class="why-item">
-
-            <h3>
-              Built for Jamaican Travelers
-            </h3>
-
+          <article class="why-card">
+            <div class="number">01</div>
+            <h3>Personal</h3>
             <p>
-              We understand the questions and challenges Jamaican
-              travelers can face when navigating international travel.
+              Your journey is shaped around you, not copied from a generic template.
             </p>
-
           </article>
 
-
-
-          <article class="why-item">
-
-            <h3>
-              Personal, Human Service
-            </h3>
-
+          <article class="why-card">
+            <div class="number">02</div>
+            <h3>Clear</h3>
             <p>
-              No confusing call centres or feeling like a number.
-              You communicate with real people who care about your
-              experience.
+              We help simplify the questions, choices, and details that can feel overwhelming.
             </p>
-
           </article>
 
-
-
-          <article class="why-item">
-
-            <h3>
-              Luxury Is in the Details
-            </h3>
-
+          <article class="why-card">
+            <div class="number">03</div>
+            <h3>Curated</h3>
             <p>
-              Our approach is thoughtful and elevated, with attention
-              given to the details that make a journey feel special.
+              Recommendations are selected with your style, budget, and priorities in mind.
             </p>
-
           </article>
 
-
-
-          <article class="why-item">
-
-            <h3>
-              Guidance From Start to Finish
-            </h3>
-
+          <article class="why-card">
+            <div class="number">04</div>
+            <h3>Supportive</h3>
             <p>
-              Whether you need clarity or full trip planning, you
-              don't have to figure out every step alone.
+              You have real people to turn to while you prepare for your journey.
             </p>
-
           </article>
-
 
         </div>
 
-
       </div>
-
     </section>
 
 
-
-
-
-    <!-- ========================================
-         WHAT YOU CAN EXPECT
-    ======================================== -->
-
-    <section class="section expect">
-
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how-it-works">
       <div class="container">
 
-        <div class="eyebrow">
-          What You Can Expect
-        </div>
-
-        <h2>
-          Travel planning with
-          <br>
-          more
-          <span class="gold-text">
-            care behind it.
-          </span>
-        </h2>
-
-        <div class="expect-grid">
-
-          <article class="expect-item">
-            <div class="expect-icon">✦</div>
-            <h3>Clear Communication</h3>
-            <p>We believe you should understand what is happening at every stage and what your next step may be.</p>
-          </article>
-
-          <article class="expect-item">
-            <div class="expect-icon">✦</div>
-            <h3>Personal Attention</h3>
-            <p>Your journey is not just another booking. We take time to understand what matters to you and what you want from the experience.</p>
-          </article>
-
-          <article class="expect-item">
-            <div class="expect-icon">✦</div>
-            <h3>Honest Guidance</h3>
-            <p>If something is unclear, requires further consideration, or is outside our scope, we'll communicate honestly and transparently.</p>
-          </article>
-
-          <article class="expect-item">
-            <div class="expect-icon">✦</div>
-            <h3>Thoughtful Planning</h3>
-            <p>The details can shape the entire experience. We approach every journey with care and attention to what matters most.</p>
-          </article>
-
-          <article class="expect-item">
-            <div class="expect-icon">✦</div>
-            <h3>Less Overwhelm</h3>
-            <p>International travel can involve many moving parts. Our role is to help bring more structure and clarity to the planning process.</p>
-          </article>
-
-          <article class="expect-item">
-            <div class="expect-icon">✦</div>
-            <h3>A Human Experience</h3>
-            <p>No feeling like you are just another number. Dariel Destinations is built around real conversations, real questions, and personal service.</p>
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ========================================
-         OUR STORY
-    ======================================== -->
-
-    <section class="section story">
-
-      <div class="container story-wrap">
-
-
-        <div class="eyebrow">
-          Our Story
-        </div>
-
-
-        <h2>
-          Born in Jamaica.
-          <br>
-          Designed for the
-          <span class="gold-text">
-            world.
-          </span>
-        </h2>
-
-
-        <p>
-          Dariel Destinations began with a simple question:
-          why should seeing the world feel so complicated?
-        </p>
-
-
-        <p>
-          For many Jamaican travelers, an international journey can
-          come with more questions than answers. Where do I begin?
-          What documents do I need? Do I need a visa? How do I plan
-          everything without missing an important detail?
-        </p>
-
-
-        <p>
-          We understood those questions. So we created Dariel
-          Destinations, a travel company built around the belief
-          that travel planning should feel clear, personal, and exciting.
-        </p>
-
-
-        <p>
-          We're not here simply to help you choose a destination.
-          We're here to help you move from
-          <span class="gold-text">“I wish I could go”</span>
-          to
-          <span class="gold-text">“I'm ready to go.”</span>
-        </p>
-
-
-        <p class="founders">
-          Sydonya & Darian Coke — Founders, Dariel Destinations
-        </p>
-
-
-      </div>
-
-    </section>
-
-
-
-
-
-    <!-- ========================================
-         MEET THE FOUNDERS
-    ======================================== -->
-
-    <section class="section founder-section">
-
-      <div class="container founder-grid">
-
-        <!-- Replace this placeholder with your founder photo later -->
-        <div class="founder-photo">
-
-          <img
-    src="founders.png"
-    alt="Sydonya and Darian Coke, founders of Dariel Destinations"
-  >
-
-        </div>
-
-        <div class="founder-copy">
-
-          <div class="eyebrow">
-            Meet the Founders
-          </div>
+        <div class="process-head">
+          <div class="section-kicker">How It Works</div>
 
           <h2>
-            The people behind
+            From “I want to go”
             <br>
-            your
-            <span class="gold-text">
-              next journey.
-            </span>
+            to <span class="text-blue">“I know what I’m doing.”</span>
+          </h2>
+
+          <p class="lead">
+            A simple process designed to bring structure to the planning
+            without taking the excitement out of the trip.
+          </p>
+        </div>
+
+        <div class="steps">
+
+          <article class="step">
+            <div class="step-num">01</div>
+            <h3>Tell us what you’re planning</h3>
+            <p>
+              Share your destination ideas, dates, budget, travel style,
+              and what you need help with.
+            </p>
+          </article>
+
+          <article class="step">
+            <div class="step-num">02</div>
+            <h3>We recommend the right service</h3>
+            <p>
+              We identify whether you need clarity, custom planning,
+              or celebration-focused support.
+            </p>
+          </article>
+
+          <article class="step">
+            <div class="step-num">03</div>
+            <h3>We plan with intention</h3>
+            <p>
+              We research, organize, and shape your travel plan
+              around what matters most to you.
+            </p>
+          </article>
+
+          <article class="step">
+            <div class="step-num">04</div>
+            <h3>You move forward with confidence</h3>
+            <p>
+              Less guesswork, less overwhelm, and a journey
+              that feels more thoughtfully put together.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- WHO THIS IS FOR -->
+    <section class="section section-soft">
+      <div class="container fit-wrap">
+
+        <div class="fit-visual" aria-label="Traveler preparing for a journey"></div>
+
+        <div>
+          <div class="section-kicker">This Is For You If</div>
+
+          <h2>
+            You want the trip.
+            <br>
+            <span class="text-blue">Not the planning stress.</span>
+          </h2>
+
+          <div class="fit-list">
+
+            <div class="fit-item">
+              <div class="fit-check">✓</div>
+              <p>You want to travel but feel overwhelmed by where to start.</p>
+            </div>
+
+            <div class="fit-item">
+              <div class="fit-check">✓</div>
+              <p>You have questions and want clarity before spending money.</p>
+            </div>
+
+            <div class="fit-item">
+              <div class="fit-check">✓</div>
+              <p>You want a trip that feels personal instead of random or generic.</p>
+            </div>
+
+            <div class="fit-item">
+              <div class="fit-check">✓</div>
+              <p>You are planning something special and want the details done properly.</p>
+            </div>
+
+            <div class="fit-item">
+              <div class="fit-check">✓</div>
+              <p>You would rather have expert help than spend hours researching everything yourself.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container founders-wrap">
+
+        <div class="founders-photo">
+          <img
+            src="founders.png"
+            alt="Sydonya and Darian Coke, founders of Dariel Destinations"
+          >
+        </div>
+
+        <div class="founders-copy">
+          <div class="section-kicker">Meet the Founders</div>
+
+          <h2>
+            Built around a
+            <br>
+            <span class="text-blue">better way to plan travel.</span>
           </h2>
 
           <p>
-            Dariel Destinations was founded by Sydonya and Darian Coke,
-            a Jamaican couple with a shared belief that experiencing
-            the world should feel exciting, not overwhelming.
+            Dariel Destinations was created from a simple belief:
+            planning a trip should feel exciting, not exhausting.
           </p>
 
           <p>
-            As travelers ourselves, we understand that planning an
-            international journey can involve far more than choosing a
-            destination. Questions about travel documents, flights,
-            accommodation, budgets, and unfamiliar processes can quickly
-            make an exciting idea feel complicated.
+            We built the brand to offer thoughtful, personal support
+            for travelers who want more clarity, more intention,
+            and less overwhelm throughout the planning process.
           </p>
 
           <p>
-            We created Dariel Destinations to bring more clarity, care,
-            and personal attention to that experience. Our goal is simple:
-            to help Jamaican travelers approach the world with greater
-            confidence and spend less time feeling overwhelmed by the details.
-          </p>
-
-          <p>
-            Because behind every journey is a person, a reason for going,
-            and a story waiting to happen.
+            From helping you make sense of the early questions
+            to shaping a personalized itinerary, our role is to make
+            the journey from idea to departure feel easier and more considered.
           </p>
 
           <p class="founder-names">
             Sydonya & Darian Coke<br>
             Founders, Dariel Destinations
           </p>
-
         </div>
 
       </div>
-
     </section>
 
 
-    <!-- ========================================
-         FAQ
-    ======================================== -->
+    <!-- FAQ -->
+    <section class="section section-soft faq" id="faq">
+      <div class="container faq-layout">
 
-    <section class="section faq" id="faq">
+        <div>
+          <div class="section-kicker">FAQ</div>
 
-      <div class="container">
+          <h2>
+            A few things
+            <br>
+            <span class="text-blue">you may want to know.</span>
+          </h2>
 
-        <div class="eyebrow">
-          Frequently Asked Questions
+          <p class="lead">
+            Clear answers before you take the next step.
+          </p>
         </div>
 
-        <h2>
-          A few things you may
-          <br>
-          want to
-          <span class="gold-text">
-            know.
-          </span>
-        </h2>
+        <div>
 
-        <p class="lead">
-          Clear answers before you take the next step.
-        </p>
-
-        <div class="faq-wrap">
-
-          <div class="faq-group">
-
-            <h3>Before You Begin</h3>
+          <div class="faq-wrap">
 
             <details>
-              <summary>What does Dariel Destinations help with?</summary>
+              <summary>What exactly does Dariel Destinations help with?</summary>
               <div class="faq-answer">
-                We provide personalized travel planning and guidance for Jamaican travelers. Depending on the service you choose, we can help bring clarity to your travel plans, guide you through travel-related questions, and help shape a journey around your destination, priorities, and travel style.
+                We provide personalized travel planning, destination research,
+                itinerary development, travel-related guidance, and concierge-style
+                planning support. The exact level of support depends on the service
+                you choose and the needs of your trip.
               </div>
             </details>
 
             <details>
-              <summary>Can you help me if I don't know where I want to go?</summary>
+              <summary>Can you help me if I don’t know where I want to go yet?</summary>
               <div class="faq-answer">
-                Absolutely. You don't need to have every detail figured out before reaching out. Tell us about the kind of experience you're looking for, your budget, and what matters most to you, and we'll help bring your ideas into focus.
+                Yes. You do not need to have every detail figured out before reaching out.
+                We can help bring your ideas into focus based on the type of experience
+                you want, your budget, timing, and priorities.
               </div>
             </details>
 
             <details>
-              <summary>How far in advance should I start planning my trip?</summary>
+              <summary>Do you help with visa and entry questions?</summary>
               <div class="faq-answer">
-                The earlier, the better. Planning ahead can give you more options and more time to prepare. However, if your trip is coming up soon, feel free to reach out and we'll let you know how we may be able to help.
+                We can provide travel-related guidance and help you understand
+                information you may need to consider. Final visa, entry, and document
+                requirements should always be confirmed with the relevant official authority.
               </div>
             </details>
 
             <details>
-              <summary>Do you only work with Jamaican travelers?</summary>
+              <summary>Do you book flights and hotels for clients?</summary>
               <div class="faq-answer">
-                Dariel Destinations was created with Jamaican travelers at heart. Our services are designed around understanding the questions and considerations that can come with traveling internationally from Jamaica.
+                Dariel Destinations is primarily a travel planning and concierge company.
+                Our core service is research, recommendations, itinerary planning,
+                and personalized guidance. Where booking-related support is available,
+                the scope will be explained clearly before you move forward.
               </div>
             </details>
-
-          </div>
-
-
-          <div class="faq-group">
-
-            <h3>Visa Guidance</h3>
-
-            <details>
-              <summary>Can you guarantee that my visa will be approved?</summary>
-              <div class="faq-answer">
-                No. Visa decisions are made solely by the relevant embassy, consulate, immigration authority, or border officials. While we may provide travel-related guidance to help you better understand the process and prepare for next steps, we cannot guarantee the approval of any visa or travel document.
-              </div>
-            </details>
-
-            <details>
-              <summary>Can you help me if I'm not sure whether I need a visa?</summary>
-              <div class="faq-answer">
-                We can help provide travel-related guidance and help you understand what information you may need to consider before moving forward with your travel plans. Final requirements should always be confirmed with the relevant official authority.
-              </div>
-            </details>
-
-          </div>
-
-
-          <div class="faq-group">
-
-            <h3>Working With Us</h3>
 
             <details>
               <summary>How do I get started?</summary>
               <div class="faq-answer">
-                Simply complete our trip planning form and tell us a little about what you're looking for. We'll review your information and get in touch about the next best step.
-              </div>
-            </details>
-
-            <details>
-              <summary>How much do your services cost?</summary>
-              <div class="faq-answer">
-                The cost of our services depends on the type of support and level of planning your journey requires. We'll provide clarity about the applicable service and fees before you move forward.
-              </div>
-            </details>
-
-            <details>
-              <summary>Can you plan trips for couples?</summary>
-              <div class="faq-answer">
-                Yes. The Couples Escape is designed for honeymoons, romantic getaways, anniversaries, and meaningful experiences for two.
+                Complete our planning form and tell us a little about your trip.
+                We will review what you need and recommend the service that best fits
+                the journey you are planning.
               </div>
             </details>
 
           </div>
-
 
           <div class="visa-note">
-
-            <h3>Important Visa Information</h3>
-
+            <strong>Important visa information</strong>
             <p>
-              Dariel Destinations provides travel planning and travel-related guidance based on the information available to us and the individual circumstances discussed with our clients. We are not an embassy, consulate, immigration authority, or government agency.
+              Dariel Destinations is not an embassy, consulate, immigration authority,
+              or government agency. Visa approval, refusal, processing times, and entry
+              decisions are determined by the relevant authorities. Travel requirements
+              can change, so travelers should confirm current requirements with official sources.
             </p>
-
-            <p>
-              Visa approval, refusal, processing times, and entry decisions are determined solely by the relevant embassy, consulate, immigration authority, or border officials. Dariel Destinations cannot guarantee the approval of any visa or travel document.
-            </p>
-
-            <p>
-              Travel requirements can change. Clients are responsible for ensuring they meet all applicable entry and travel requirements and should confirm requirements with the relevant official authorities.
-            </p>
-
           </div>
 
         </div>
 
       </div>
-
     </section>
 
 
-    <!-- ========================================
-         WORLD SECTION
-    ======================================== -->
+    <!-- FINAL CTA -->
+    <section class="final-cta" id="contact">
+      <div class="container">
 
-    <section class="world">
-
-      <div class="world-inner">
-
-        <div>
-
-
-          <div
-            class="eyebrow"
-            style="justify-content:center"
-          >
-            The World Is Waiting
-          </div>
-
+        <div class="cta-card">
 
           <h2>
-            There is more to see.
+            Your next trip deserves
             <br>
-            Let's help you get there.
+            more than guesswork.
           </h2>
 
-
           <p>
-            From Jamaica to wherever your next chapter takes you.
+            Start with clarity, move with confidence,
+            and let Dariel help shape the journey.
           </p>
 
+          <div class="cta-actions">
+
+            <a
+              class="btn btn-primary"
+              href="https://forms.gle/SVi7MkJRvvi5hE9F9"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Start Planning →
+            </a>
+
+            <a
+              class="btn btn-secondary"
+              href="https://wa.me/message/2GEZOKB26UP7M1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Message Us on WhatsApp
+            </a>
+
+          </div>
 
         </div>
 
       </div>
-
     </section>
-
-
-
-    <!-- ========================================
-         FINAL CTA
-    ======================================== -->
-
-    <section
-      class="section final-cta"
-      id="contact"
-    >
-
-      <div class="container cta-box">
-
-
-        <div class="eyebrow">
-          Your Journey Starts Here
-        </div>
-
-
-        <h2>
-          Ready to see
-          <br>
-          <span class="gold-text">
-            the world?
-          </span>
-        </h2>
-
-
-        <p>
-          Tell us a little about the trip you're dreaming of and
-          we'll help you take the next step. You can also message
-          us directly for a more personal conversation.
-        </p>
-
-
-        <div class="cta-actions">
-
-
-          <a
-            class="btn-primary"
-            href="https://forms.gle/SVi7MkJRvvi5hE9F9"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Start Planning →
-          </a>
-
-
-          <!--
-            REPLACE # BELOW WITH YOUR
-            ACTUAL WHATSAPP LINK
-          -->
-
-          <a
-            class="btn-secondary"
-            href="https://wa.me/message/2GEZOKB26UP7M1"
-          >
-            Message Us on WhatsApp
-          </a>
-
-
-        </div>
-
-
-      </div>
-
-    </section>
-
 
   </main>
 
 
-
-  <!-- ========================================
-       FOOTER
-  ======================================== -->
-
+  <!-- FOOTER -->
   <footer>
-
     <div class="container">
-
 
       <div class="footer-grid">
 
-
-        <!-- BRAND -->
-
         <div class="footer-brand">
-
           <img
             class="footer-logo"
             src="logo.PNG"
             alt="Dariel Destinations"
           >
 
-
           <p>
-            Premium travel planning from Jamaica to the world.
-            Thoughtful journeys, personal guidance, and experiences
-            worth remembering.
+            Personal travel planning and concierge support
+            for thoughtfully planned journeys.
           </p>
-
         </div>
-
-
-
-        <!-- LINKS -->
 
         <div>
-
-          <div class="footer-heading">
-            Explore
-          </div>
-
+          <div class="footer-heading">Explore</div>
 
           <ul class="footer-links">
-
-            <li>
-              <a href="#about">
-                About Us
-              </a>
-            </li>
-
-            <li>
-              <a href="#services">
-                Our Services
-              </a>
-            </li>
-
-            <li>
-              <a href="#process">
-                How It Works
-              </a>
-            </li>
-
-            <li>
-              <a href="#why">
-                Why Choose Us
-              </a>
-            </li>
-
-            <li>
-              <a href="#faq">
-                FAQ
-              </a>
-            </li>
-
+            <li><a href="#services">Services</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#faq">FAQ</a></li>
           </ul>
-
         </div>
 
-
-
-        <!-- CONTACT -->
-
         <div class="footer-contact">
-
-          <div class="footer-heading">
-            Get in Touch
-          </div>
-
+          <div class="footer-heading">Get in Touch</div>
 
           <p>
-
             <a href="mailto:darieldestinations@gmail.com">
               darieldestinations@gmail.com
             </a>
-
           </p>
-
 
           <p>
-
-            <!-- REPLACE # WITH WHATSAPP LINK -->
-
-            <a href="https://wa.me/message/2GEZOKB26UP7M1">
+            <a
+              href="https://wa.me/message/2GEZOKB26UP7M1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               WhatsApp Us
             </a>
-
           </p>
-
-
-          <p
-            style="
-              margin-top:22px;
-              color:#728391;
-            "
-          >
-            Jamaica • Serving travelers headed around the world
-          </p>
-
         </div>
 
-
       </div>
-
-
 
       <div class="footer-bottom">
 
@@ -3932,44 +1958,21 @@
           © 2026 Dariel Destinations. All rights reserved.
         </span>
 
-
         <div class="policy-links">
-
-          <button class="policy-btn" data-modal="privacy-modal">
-            Privacy Policy
-          </button>
-
-          <button class="policy-btn" data-modal="terms-modal">
-            Terms & Conditions
-          </button>
-
-          <button class="policy-btn" data-modal="booking-modal">
-            Booking & Cancellation
-          </button>
-
-          <button class="policy-btn" data-modal="visa-modal">
-            Visa Disclaimer
-          </button>
-
+          <button class="policy-btn" data-modal="privacy-modal">Privacy Policy</button>
+          <button class="policy-btn" data-modal="terms-modal">Terms & Conditions</button>
+          <button class="policy-btn" data-modal="booking-modal">Booking & Cancellation</button>
+          <button class="policy-btn" data-modal="visa-modal">Visa Disclaimer</button>
         </div>
 
       </div>
 
-
     </div>
-
   </footer>
 
 
-
-
-
-  <!-- ========================================
-       POLICY MODALS
-  ======================================== -->
-
+  <!-- PRIVACY MODAL -->
   <div class="modal" id="privacy-modal" aria-hidden="true">
-
     <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
 
       <button class="modal-close" aria-label="Close privacy policy">×</button>
@@ -3977,53 +1980,61 @@
       <h2 id="privacy-title">Privacy Policy</h2>
 
       <p>
-        Dariel Destinations respects your privacy and is committed to handling personal information responsibly.
+        Dariel Destinations respects your privacy and is committed to handling
+        personal information responsibly.
       </p>
 
       <h3>Information We Collect</h3>
 
       <p>
-        We may collect information that you choose to provide through our website, planning forms, email, WhatsApp, or other direct communication.
-        This may include information such as your name, contact details, travel preferences, intended destination, travel dates, number of travelers, and other information reasonably necessary to respond to your inquiry or provide the service you have requested.
+        We may collect information that you choose to provide through our website,
+        planning forms, email, WhatsApp, or other direct communication. This may
+        include your name, contact details, travel preferences, intended destination,
+        travel dates, number of travelers, and other information reasonably necessary
+        to respond to your inquiry or provide the service you have requested.
       </p>
 
       <h3>How We Use Your Information</h3>
 
       <p>
-        We use information only for legitimate business and service-related purposes connected to your inquiry or journey. We do not sell your personal information.
+        We use information only for legitimate business and service-related purposes
+        connected to your inquiry or journey. We do not sell your personal information.
       </p>
 
       <h3>Travel Information</h3>
 
       <p>
-        Depending on the service requested, you may choose to share travel-related information with us. You should provide only information that is reasonably necessary for the service you are requesting.
+        Depending on the service requested, you may choose to share travel-related
+        information with us. You should provide only information that is reasonably
+        necessary for the service you are requesting.
       </p>
 
       <h3>Policy Updates</h3>
 
       <p>
-        This policy may be updated as Dariel Destinations grows and our services develop. Any updated version will be posted on this website.
+        This policy may be updated as Dariel Destinations grows and our services
+        develop. Any updated version will be posted on this website.
       </p>
 
       <h3>Contact Us</h3>
 
       <p>
-        If you have questions about this Privacy Policy or how your information is handled, please contact us at:
-        darieldestinations@gmail.com
+        If you have questions about this Privacy Policy or how your information
+        is handled, please contact us at darieldestinations@gmail.com.
       </p>
 
-
       <p class="small-note">
-        By submitting information through our website, planning forms, or direct communication with Dariel Destinations, you acknowledge that you have read and understood this Privacy Policy.
+        By submitting information through our website, planning forms,
+        or direct communication with Dariel Destinations, you acknowledge
+        that you have read and understood this Privacy Policy.
       </p>
 
     </div>
-
   </div>
 
 
+  <!-- TERMS MODAL -->
   <div class="modal" id="terms-modal" aria-hidden="true">
-
     <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="terms-title">
 
       <button class="modal-close" aria-label="Close terms and conditions">×</button>
@@ -4031,44 +2042,52 @@
       <h2 id="terms-title">Terms & Conditions</h2>
 
       <p>
-        By using the Dariel Destinations website or contacting us about our services, you agree to use our website and communications lawfully and respectfully.
+        By using the Dariel Destinations website or contacting us about our services,
+        you agree to use our website and communications lawfully and respectfully.
       </p>
 
       <h3>Service Scope</h3>
 
       <p>
-        The specific services provided to a client will depend on the service selected and the details agreed upon before work begins. We will aim to provide clear information about the support we can offer before you move forward.
+        The specific services provided to a client will depend on the service selected
+        and the details agreed upon before work begins. We will aim to provide clear
+        information about the support we can offer before you move forward.
       </p>
 
       <h3>Travel Decisions</h3>
 
       <p>
-        Travelers remain responsible for their own travel decisions, bookings, documents, payments, and compliance with applicable travel and entry requirements unless otherwise expressly agreed in writing.
+        Travelers remain responsible for their own travel decisions, bookings,
+        documents, payments, and compliance with applicable travel and entry
+        requirements unless otherwise expressly agreed in writing.
       </p>
 
       <h3>Third Parties</h3>
 
       <p>
-        Airlines, hotels, embassies, government authorities, tour operators, and other third parties operate independently from Dariel Destinations. Their policies, availability, prices, schedules, and decisions may change.
+        Airlines, hotels, embassies, government authorities, tour operators,
+        and other third parties operate independently from Dariel Destinations.
+        Their policies, availability, prices, schedules, and decisions may change.
       </p>
 
       <h3>Updates</h3>
 
       <p>
-        These terms may be updated as our business and services develop. The version published on this website is the current website version.
+        These terms may be updated as our business and services develop.
+        The version published on this website is the current website version.
       </p>
 
       <p class="small-note">
-        For any paid service, you may receive additional service-specific terms before work begins.
+        For any paid service, you may receive additional service-specific
+        terms before work begins.
       </p>
 
     </div>
-
   </div>
 
 
+  <!-- BOOKING MODAL -->
   <div class="modal" id="booking-modal" aria-hidden="true">
-
     <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="booking-title">
 
       <button class="modal-close" aria-label="Close booking and cancellation policy">×</button>
@@ -4076,65 +2095,68 @@
       <h2 id="booking-title">Booking & Cancellation</h2>
 
       <p>
-        At Dariel Destinations, we aim to make the travel planning process clear and straightforward. This policy explains how bookings, changes, cancellations, and third-party travel arrangements are handled.
+        At Dariel Destinations, we aim to make the travel planning process
+        clear and straightforward.
       </p>
 
       <h3>Booking Our Services</h3>
 
       <p>
-        Before any paid service begins, we will communicate the applicable service, scope of support, and any relevant fees or payment requirements.
-        A service will only begin once the relevant arrangements have been confirmed between you and Dariel Destinations and any required payment has been received.
+        Before any paid service begins, we will communicate the applicable service,
+        scope of support, and any relevant fees or payment requirements. A service
+        will only begin once the relevant arrangements have been confirmed between
+        you and Dariel Destinations and any required payment has been received.
       </p>
 
       <h3>Planning and Consultation Services</h3>
 
       <p>
-        Where a consultation or travel planning service requires a fee, the applicable cost will be communicated before work begins.
-        Once consultation, research, planning, or other agreed services have begun, fees for work already completed may not be refundable.
+        Where a consultation or travel planning service requires a fee,
+        the applicable cost will be communicated before work begins.
+        Once consultation, research, planning, or other agreed services have begun,
+        fees for work already completed may not be refundable.
       </p>
 
       <h3>Changes to Your Travel Plans</h3>
 
       <p>
-        We understand that travel plans can change. If you need to make significant changes to your destination, travel dates, number of travelers, or other important details after planning has begun, please let us know as soon as possible.
-        Depending on the stage of planning and the nature of the changes requested, additional research, planning time, or fees may be required. Where applicable, this will be communicated to you before additional work begins.
+        If you need to make significant changes to your destination, travel dates,
+        number of travelers, or other important details after planning has begun,
+        please let us know as soon as possible. Depending on the stage of planning
+        and the nature of the changes requested, additional research, planning time,
+        or fees may be required.
       </p>
 
       <h3>Cancellations</h3>
 
       <p>
-        If you wish to cancel a consultation or travel planning service, please notify Dariel Destinations as soon as possible.
-        Any refund eligibility will depend on the stage of the service and the work already completed. Fees for consultations, research, planning, or other services already provided may not be refundable.
+        If you wish to cancel a consultation or travel planning service,
+        please notify Dariel Destinations as soon as possible. Any refund eligibility
+        will depend on the stage of the service and the work already completed.
       </p>
 
       <h3>Third-Party Travel Providers</h3>
 
       <p>
-        Travel arrangements may involve airlines, hotels, tour providers, transportation companies, or other third-party suppliers.
-        Each supplier has its own booking, change, cancellation, and refund policies. Any refunds, credits, changes, or cancellation charges relating to these arrangements are subject to the terms and conditions of the relevant supplier.
-        Dariel Destinations cannot guarantee refunds from third-party travel providers.
-      </p>
-
-      <h3>No-Shows and Unused Travel Arrangements</h3>
-
-      <p>
-        Failure to arrive for or use a booked flight, accommodation, tour, transfer, or other travel arrangement may result in the loss of all or part of the amount paid, depending on the policies of the relevant travel provider.
+        Travel arrangements may involve airlines, hotels, tour providers,
+        transportation companies, or other third-party suppliers. Each supplier has
+        its own booking, change, cancellation, and refund policies. Dariel Destinations
+        cannot guarantee refunds from third-party travel providers.
       </p>
 
       <h3>Questions About Your Booking</h3>
 
       <p>
-        We believe in clear communication. If you have questions about a service, payment, cancellation, or travel arrangement, please contact Dariel Destinations before proceeding.
-        We will aim to ensure that you understand the relevant service, costs, and important next steps before moving forward.
+        If you have questions about a service, payment, cancellation,
+        or travel arrangement, please contact Dariel Destinations before proceeding.
       </p>
 
     </div>
-
   </div>
 
 
+  <!-- VISA MODAL -->
   <div class="modal" id="visa-modal" aria-hidden="true">
-
     <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="visa-title">
 
       <button class="modal-close" aria-label="Close visa disclaimer">×</button>
@@ -4142,242 +2164,109 @@
       <h2 id="visa-title">Visa Disclaimer</h2>
 
       <p>
-        Dariel Destinations provides travel planning and travel-related guidance based on the information available to us and the individual circumstances discussed with our clients.
+        Dariel Destinations provides travel planning and travel-related guidance
+        based on the information available to us and the individual circumstances
+        discussed with our clients.
       </p>
 
       <p>
-        We are not an embassy, consulate, immigration authority, government agency, or decision-making authority for visas or entry permissions.
+        We are not an embassy, consulate, immigration authority, government agency,
+        or decision-making authority for visas or entry permissions.
       </p>
 
       <h3>No Guarantee of Approval</h3>
 
       <p>
-        Visa approval, refusal, processing times, and entry decisions are determined solely by the relevant embassy, consulate, immigration authority, or border officials. Dariel Destinations cannot guarantee the approval of any visa, travel document, or entry permission.
+        Visa approval, refusal, processing times, and entry decisions are determined
+        solely by the relevant embassy, consulate, immigration authority,
+        or border officials. Dariel Destinations cannot guarantee the approval
+        of any visa, travel document, or entry permission.
       </p>
 
       <h3>Changing Requirements</h3>
 
       <p>
-        Travel and entry requirements can change. Travelers remain responsible for confirming current requirements with the relevant official authorities and ensuring they meet all applicable requirements before traveling.
+        Travel and entry requirements can change. Travelers remain responsible
+        for confirming current requirements with the relevant official authorities
+        and ensuring they meet all applicable requirements before traveling.
       </p>
 
     </div>
-
   </div>
 
 
-  <!-- ========================================
-       JAVASCRIPT
-  ======================================== -->
-
   <script>
+    const header = document.querySelector(".site-header");
+    const toggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".nav-links");
+    const menuLinks = document.querySelectorAll(".nav-links a");
 
-    const header =
-      document.querySelector(".site-header");
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("scrolled", window.scrollY > 18);
+    });
 
+    toggle.addEventListener("click", () => {
+      const open = menu.classList.toggle("open");
 
-    const toggle =
-      document.querySelector(".menu-toggle");
+      document.body.classList.toggle("menu-open", open);
 
+      toggle.setAttribute("aria-expanded", open);
+      toggle.textContent = open ? "×" : "☰";
+    });
 
-    const menu =
-      document.querySelector(".nav-links");
-
-
-    const menuLinks =
-      document.querySelectorAll(".nav-links a");
-
-
-    window.addEventListener(
-      "scroll",
-      () => {
-
-        header.classList.toggle(
-          "scrolled",
-          window.scrollY > 25
-        );
-
-      }
-    );
+    menuLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("open");
+        document.body.classList.remove("menu-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.textContent = "☰";
+      });
+    });
 
 
-    toggle.addEventListener(
-      "click",
-      () => {
-
-        const open =
-          menu.classList.toggle("open");
-
-
-        document.body.classList.toggle(
-          "menu-open",
-          open
-        );
-
-
-        toggle.setAttribute(
-          "aria-expanded",
-          open
-        );
-
-
-        toggle.textContent =
-          open ? "×" : "☰";
-
-      }
-    );
-
-
-    menuLinks.forEach(
-      link => {
-
-        link.addEventListener(
-          "click",
-          () => {
-
-            menu.classList.remove("open");
-
-            document.body.classList.remove(
-              "menu-open"
-            );
-
-
-            toggle.setAttribute(
-              "aria-expanded",
-              "false"
-            );
-
-
-            toggle.textContent = "☰";
-
-          }
-        );
-
-      }
-    );
-
-
-    /* ========================================
-       POLICY MODALS
-    ======================================== */
-
-    const modalButtons =
-      document.querySelectorAll(".policy-btn");
-
-
-    const modals =
-      document.querySelectorAll(".modal");
-
+    const modalButtons = document.querySelectorAll(".policy-btn");
+    const modals = document.querySelectorAll(".modal");
+    const modalCloseButtons = document.querySelectorAll(".modal-close");
 
     const closeModals = () => {
+      modals.forEach(modal => {
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden", "true");
+      });
 
-      modals.forEach(
-        modal => {
-
-          modal.classList.remove("open");
-
-          modal.setAttribute(
-            "aria-hidden",
-            "true"
-          );
-
-        }
-      );
-
-
-      document.body.classList.remove(
-        "menu-open"
-      );
-
+      document.body.classList.remove("modal-open");
     };
 
+    modalButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const modal = document.getElementById(button.dataset.modal);
 
-    modalButtons.forEach(
-      button => {
+        if (!modal) return;
 
-        button.addEventListener(
-          "click",
-          () => {
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-open");
+      });
+    });
 
-            const modal =
-              document.getElementById(
-                button.dataset.modal
-              );
+    modalCloseButtons.forEach(button => {
+      button.addEventListener("click", closeModals);
+    });
 
-
-            if (modal) {
-
-              modal.classList.add("open");
-
-              modal.setAttribute(
-                "aria-hidden",
-                "false"
-              );
-
-
-              document.body.classList.add(
-                "menu-open"
-              );
-
-            }
-
-          }
-        );
-
-      }
-    );
-
-
-    document.querySelectorAll(".modal-close")
-      .forEach(
-        button => {
-
-          button.addEventListener(
-            "click",
-            closeModals
-          );
-
-        }
-      );
-
-
-    modals.forEach(
-      modal => {
-
-        modal.addEventListener(
-          "click",
-          event => {
-
-            if (event.target === modal) {
-
-              closeModals();
-
-            }
-
-          }
-        );
-
-      }
-    );
-
-
-    document.addEventListener(
-      "keydown",
-      event => {
-
-        if (event.key === "Escape") {
-
+    modals.forEach(modal => {
+      modal.addEventListener("click", event => {
+        if (event.target === modal) {
           closeModals();
-
         }
+      });
+    });
 
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeModals();
       }
-    );
-
-
+    });
   </script>
 
-
 </body>
-
 </html>
